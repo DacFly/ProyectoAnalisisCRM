@@ -1,0 +1,420 @@
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.json
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.exe
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.deps.json
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.runtimeconfig.json
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.pdb
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Humanizer.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.AssemblyReference.cache
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfoInputs.cache
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfo.cs
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CoreCompileInputs.cache
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\scopedcss\bundle\APIGestion.styles.css
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CopyComplete
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\refint\APIGestion.dll
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.pdb
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.genruntimeconfig.cache
+C:\Users\WilmarSG\Desktop\Proyecto Gestion\APIGestion\APIGestion\obj\Debug\net6.0\ref\APIGestion.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.exe
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.deps.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.runtimeconfig.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.pdb
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Humanizer.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.AssemblyReference.cache
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfoInputs.cache
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfo.cs
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CoreCompileInputs.cache
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.APIGestion.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.build.APIGestion.props
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.APIGestion.props
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.APIGestion.props
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\scopedcss\bundle\APIGestion.styles.css
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CopyComplete
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\refint\APIGestion.dll
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.pdb
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.genruntimeconfig.cache
+C:\Users\racha\Downloads\APIGestion\APIGestion\obj\Debug\net6.0\ref\APIGestion.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.json
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.exe
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.deps.json
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.runtimeconfig.json
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.pdb
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Humanizer.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.AssemblyReference.cache
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfoInputs.cache
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfo.cs
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CoreCompileInputs.cache
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\scopedcss\bundle\APIGestion.styles.css
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CopyComplete
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\refint\APIGestion.dll
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.pdb
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.genruntimeconfig.cache
+C:\Users\WilmarSG\Desktop\NUEVA API\APIGestion\APIGestion\obj\Debug\net6.0\ref\APIGestion.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.json
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.exe
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.deps.json
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.runtimeconfig.json
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.pdb
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Humanizer.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.AssemblyReference.cache
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfoInputs.cache
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfo.cs
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CoreCompileInputs.cache
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\scopedcss\bundle\APIGestion.styles.css
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CopyComplete
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\refint\APIGestion.dll
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.pdb
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.genruntimeconfig.cache
+C:\Users\WilmarSG\Desktop\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\ref\APIGestion.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.Development.json
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\appsettings.json
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.exe
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.deps.json
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.runtimeconfig.json
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\APIGestion.pdb
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Core.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Azure.Identity.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Humanizer.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.OpenApi.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Mono.TextTemplating.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.CodeDom.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Drawing.Common.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Memory.Data.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Runtime.Caching.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Security.Permissions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Text.Json.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\System.Windows.Extensions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.AssemblyReference.cache
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.GeneratedMSBuildEditorConfig.editorconfig
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfoInputs.cache
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.AssemblyInfo.cs
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CoreCompileInputs.cache
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cs
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.MvcApplicationPartsAssemblyInfo.cache
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.APIGestion.Microsoft.AspNetCore.StaticWebAssets.props
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.build.APIGestion.props
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.APIGestion.props
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.APIGestion.props
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.pack.json
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.build.json
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\staticwebassets.development.json
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\scopedcss\bundle\APIGestion.styles.css
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.csproj.CopyComplete
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\refint\APIGestion.dll
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.pdb
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\APIGestion.genruntimeconfig.cache
+F:\GESTION Ultima version\APIGestion\APIGestion\obj\Debug\net6.0\ref\APIGestion.dll

@@ -1,0 +1,68 @@
+
+use CRM 
+ALTER TABLE Cliente
+DROP CONSTRAINT PK_Cliente;
+
+create table Cliente (
+ClienteId int primary key identity not null, 
+Cedula varchar(30) not null,
+Nombre varchar(30) not null,
+Apellido varchar(30) not null,
+Correo varchar(30) not null,
+Telefono varchar(30) not null
+); 
+
+select * from cliente
+
+
+ CREATE PROCEDURE BuscarClientePorNombre
+    @NombreBuscado VARCHAR(30)
+AS
+BEGIN
+    SELECT * FROM Cliente
+    WHERE Nombre LIKE '%' + @NombreBuscado + '%';
+END;
+
+
+-- Insertar Cliente 1
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('1111111111', 'Juan', 'Pérez', 'juan@example.com', '555-1111');
+
+-- Insertar Cliente 2
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('2222222222', 'María', 'Gómez', 'maria@example.com', '555-2222');
+
+-- Insertar Cliente 3
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('3333333333', 'Carlos', 'López', 'carlos@example.com', '555-3333');
+
+-- Insertar Cliente 4
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('4444444444', 'Laura', 'Sánchez', 'laura@example.com', '555-4444');
+
+-- Insertar Cliente 5
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('5555555555', 'Luis', 'Martínez', 'luis@example.com', '555-5555');
+
+-- Insertar Cliente 6
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('6666666666', 'Ana', 'Ramírez', 'ana@example.com', '555-6666');
+
+-- Insertar Cliente 7
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('7777777777', 'Pedro', 'Ortega', 'pedro@example.com', '555-7777');
+
+-- Insertar Cliente 8
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('8888888888', 'Sofía', 'Díaz', 'sofia@example.com', '555-8888');
+
+-- Insertar Cliente 9
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('9999999999', 'Roberto', 'García', 'roberto@example.com', '555-9999');
+
+-- Insertar Cliente 10
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('1010101010', 'Isabel', 'Fernández', 'isabel@example.com', '555-1010');
+
+INSERT INTO Cliente (Cedula, Nombre, Apellido, Correo, Telefono)
+VALUES ('1010101010', 'Isabelo', 'Fernández', 'isabel@example.com', '555-1010');

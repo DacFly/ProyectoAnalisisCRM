@@ -28,13 +28,11 @@
     </div>
     <div class="site-mobile-menu-body"></div>
   </div> <!-- .site-mobile-menu -->
-
   <!-- NAVBAR -->
   <header class="site-navbar mt-3" id="menu">
 
   </header>
-
-
+  <!--Color de fondo-->
   <div class="hero" style="background-color:#114C5F; height: 200px;"></div>
 
   <div class="container">
@@ -46,7 +44,17 @@
             <h2>Clientes</h2>
           </div>
           <div class="col-6 text-right"> <!-- Segunda columna con mitad del ancho (6 de 12 columnas) y alineación a la derecha -->
-              agregar
+            <div class="row">
+               <div class="col-6">
+
+               </div>
+               <div class="col-6">
+                <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
+                  placeholder="Direccion">
+                  <a name="" id="" class="btn btn-success" onclick="" role="button">Agregar</a>  
+               </div>
+            </div>
+            
           </div>
         </div>
         <thead class="table-light">
@@ -66,7 +74,6 @@
       </table>
     </div>
   </div>
-
 
   <div class="modal " id="modalCrearEvento" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
     aria-labelledby="modalTitleId" aria-hidden="true">
@@ -149,10 +156,9 @@
       </div>
     </div>
   </div>
-  <footer>
-    <div id="footer"></div>
 
-  </footer>
+
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -161,8 +167,7 @@
 
 
   <script src="js/menu.js "></script>
-  <script src="js/index.js "></script>
+  <script src="js/cliente.js "></script>
 
 </body>
-
 </html>

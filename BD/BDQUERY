@@ -1,7 +1,7 @@
 
 use CRM 
-ALTER TABLE Cliente
-DROP CONSTRAINT PK_Cliente;
+
+DROP TABLE Cliente
 
 create table Cliente (
 ClienteId int primary key identity not null, 
@@ -11,6 +11,7 @@ Apellido varchar(30) not null,
 Correo varchar(30) not null,
 Telefono varchar(30) not null
 ); 
+
 
 select * from cliente
 

@@ -51,7 +51,7 @@
                <div class="col-6">
                 <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
                   placeholder="Direccion">
-                  <a name="" id="" class="btn btn-success" onclick="" role="button">Agregar</a>  
+                  <a name="" id="" class="btn btn-success" onclick="mostrarModalCrearCliente()" role="button">Agregar</a>  
                </div>
             </div>
             
@@ -75,15 +75,18 @@
     </div>
   </div>
 
-  <div class="modal " id="modalCrearEvento" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+  <div class="modal " id="modalCrearCliente" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
     aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      
       <div class="modal-content">
+
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Agregar Evento</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearEvento()"
+          <h5 class="modal-title" id="modalTitleId"> Agregar Cliente</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearCliente()"
             style="background-color: transparent; border: 0;">X</button>
         </div>
+
         <div class="modal-body" style="width: auto;">
 
           <form class="m-needs-validation" novalidate id="frmEventos">
@@ -92,8 +95,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Titulo</label>
-                  <input type="text" class="form-control" name="evento" id="evento" aria-describedby="helpId"
+                  <label for="" class="form-label">Cedula</label>
+                  <input type="text" class="form-control" name="evento" id="cedula" aria-describedby="helpId"
                     placeholder="Titulo del evento">
                   <small id="helpId" class="form-text text-muted"> Ingresa el titulo del evento</small>
                 </div>
@@ -102,8 +105,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Direccion</label>
-                  <input type="text" class="form-control" name="evento" id="direccion" aria-describedby="helpId"
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
                     placeholder="Direccion">
                   <small id="helpId" class="form-text text-muted"> Ingrese direccion </small>
                 </div>
@@ -112,8 +115,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Fecha Publicacion</label>
-                  <input type="Date" class="form-control" name="fechaPublicacion" id="fechaPublicacion"
+                  <label for="" class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido"
                     aria-describedby="helpId" placeholder="Fecha de Publicacion">
                   <small id="helpId" class="form-text text-muted"> Ingresa la fecha de publicacion del evento</small>
                 </div>
@@ -122,8 +125,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Fecha Evento</label>
-                  <input type="date" class="form-control" name="fechaEvento" id="fechaEvento" aria-describedby="helpId"
+                  <label for="" class="form-label">Correo</label>
+                  <input type="email" class="form-control" name="fechaEvento" id="correo" aria-describedby="helpId"
                     placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
                   <small id="helpId" class="form-text text-muted"> Ingresa la fecha del evento</small>
                 </div>
@@ -132,13 +135,14 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Hora</label>
-                  <input type="time" class="form-control" name="hora" id="hora" aria-describedby="helpId"
+                  <label for="" class="form-label">Telefono</label>
+                  <input type="tel" class="form-control" name="hora" id="telefono" aria-describedby="helpId"
                     placeholder="Hora del evento">
                   <small id="helpId" class="form-text text-muted"> Ingresa la hora del evento</small>
                 </div>
               </div>
             </div>
+            <!--
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group text-align-center">
@@ -146,14 +150,18 @@
                 </div>
               </div>
             </div>
+            -->
             <div class="form-group form-check p-2" style="text-align: left;">
-              <button type="button" class="btn btn-primary" onclick="crearNuevoEv()">
+              <button type="button" class="btn btn-primary" onclick="creaCliente()">
                 Agregar
               </button>
             </div>
           </form>
+
         </div>
+
       </div>
+
     </div>
   </div>
 

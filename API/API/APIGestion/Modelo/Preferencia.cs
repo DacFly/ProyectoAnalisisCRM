@@ -11,7 +11,7 @@ namespace APIGestion.Modelo
 
         public string Nombre { get; set; }
 
-        public string nombreProducto { get; set; }
+        public string NombreProducto { get; set; }
 
         public string Descripcion { get; set; }
 

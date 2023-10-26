@@ -9,12 +9,6 @@ namespace APIGestion.Data
         {
         }
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<EventoUsuario> EventoUsuario { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<EventoUsuario>()
-               .HasKey(e => new { e.UsuarioId, e.IdEvento });
-        }
     }
 }

@@ -9,8 +9,5 @@ namespace APIGestion.Modelo
 
         public int CodProducto { get; set; }
 
-        public string NombreProducto { get; set; }
-
-        public string DescripcionProducto { get; set; }
     }
 }

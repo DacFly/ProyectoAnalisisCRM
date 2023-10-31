@@ -1,12 +1,11 @@
-//esta es la tabla que esta en la html 
 var contenidoTablaResultado = document.querySelector("#resultados");
 //modal para crear eventos
-var modalCrearCliente = new bootstrap.Modal(document.getElementById('modalCrearCliente'))
+var modalCrearTareaP = new bootstrap.Modal(document.getElementById('modalCrearTareaP'))
 //campo de texto para busqueda de la cedula
 const input = document.getElementById("inputNombre");
 
 
-function cargarClientes(){
+function cargarTareaP(){
   fetch(
     "https://localhost:7203/Cliente/listaClientes",
     {

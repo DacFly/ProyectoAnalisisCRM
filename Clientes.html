@@ -50,8 +50,8 @@
                </div>
                <div class="col-6">
                 <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
-                  placeholder="Direccion">
-                  <a name="" id="" class="btn btn-success" onclick="mostrarModalCrearCliente()" role="button">Agregar</a>  
+                  placeholder="Buscar Cliente">
+                  <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearCliente()" role="button">Agregar Cliente</a>  
                </div>
             </div>
             
@@ -75,6 +75,81 @@
     </div>
   </div>
 
+  <div class="modal " id="modalEditarCliente" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitleId"> Modificar Cliente</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalModificarCliente()" style="background-color: transparent; border: 0;">X</button>
+        </div>
+        <div class="modal-body" style="width: auto;">
+
+          <form class="m-needs-validation" novalidate id="frmEventos">
+            <input type="text" class="form-control" id="clienteId" required hidden>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Cédula</label>
+                  <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
+                    placeholder="Cédula del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" id="nombre"
+                    aria-describedby="helpId" placeholder="Nombre del cliente">
+                  <small id="helpId" class="form-text text-muted"> </small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido" aria-describedby="helpId"
+                    placeholder="Apellido del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Correo</label>
+                  <input type="text" class="form-control" name="hora" id="hora" aria-describedby="helpId"
+                    placeholder="Correo del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Teléfono</label>
+                  <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="helpId"
+                    placeholder="Teléfono del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-check p-2" style="text-align: left;">
+              <button type="submit" class="btn btn-primary">
+                Actualizar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="modal " id="modalCrearCliente" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
     aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
@@ -96,9 +171,9 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Cedula</label>
-                  <input type="text" class="form-control" name="evento" id="cedula" aria-describedby="helpId"
-                    placeholder="Titulo del evento">
-                  <small id="helpId" class="form-text text-muted"> Ingresa el titulo del evento</small>
+                  <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
+                    placeholder="Cédula del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
@@ -107,18 +182,18 @@
                 <div class="form-group">
                   <label for="" class="form-label">Nombre</label>
                   <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
-                    placeholder="Direccion">
-                  <small id="helpId" class="form-text text-muted"> Ingrese direccion </small>
+                    placeholder="Nombre del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
-            </div>
+            </div> 
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Apellidos</label>
                   <input type="text" class="form-control" name="apellido" id="apellido"
-                    aria-describedby="helpId" placeholder="Fecha de Publicacion">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de publicacion del evento</small>
+                    aria-describedby="helpId" placeholder="Apellidos del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
@@ -126,9 +201,9 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Correo</label>
-                  <input type="email" class="form-control" name="fechaEvento" id="correo" aria-describedby="helpId"
-                    placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha del evento</small>
+                  <input type="email" class="form-control" name="correo" id="correo" aria-describedby="helpId"
+                    placeholder="Correo del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
@@ -136,24 +211,16 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Telefono</label>
-                  <input type="tel" class="form-control" name="hora" id="telefono" aria-describedby="helpId"
-                    placeholder="Hora del evento">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la hora del evento</small>
+                  <input type="tel" class="form-control" name="telefono" id="telefono" aria-describedby="helpId"
+                    placeholder="Teléfono del cliente">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
-            <!--
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group text-align-center">
-                  <textarea name="comentarios" rows="7" cols="50" id="descripcion">Descripcion del Evento</textarea>
-                </div>
-              </div>
-            </div>
-            -->
+
             <div class="form-group form-check p-2" style="text-align: left;">
               <button type="button" class="btn btn-primary" onclick="creaCliente()">
-                Agregar
+                Agregar Cliente
               </button>
             </div>
           </form>

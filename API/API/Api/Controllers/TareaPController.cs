@@ -22,7 +22,7 @@ namespace Api.Controllers
         // GET: api/Usuarios
         [HttpGet]
         [Route("listaTareasPendientes")]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+        public async Task<ActionResult<IEnumerable<TareaPendiente>>> GetTareaPendiente()
         {
             var tareaP = await _context.TareaPendiente.ToListAsync();
             return Ok(tareaP);
@@ -31,7 +31,7 @@ namespace Api.Controllers
         // GET: api/Usuarios/5
         [HttpGet]
         [Route("BuscarTareaP/{id}")]
-        public async Task<ActionResult<Cliente>> GetTareaP(int id)
+        public async Task<ActionResult<TareaPendiente>> GetTareaP(int id)
         {
             var tareaP = await _context.TareaPendiente.FindAsync(id);
 

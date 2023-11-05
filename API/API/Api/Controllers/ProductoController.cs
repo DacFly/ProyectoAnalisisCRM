@@ -9,7 +9,7 @@ using System.Data;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("Cliente")]
+    [Route("Producto")]
     public class ProductoController : Controller
     {
         private readonly Context _context;
@@ -43,6 +43,7 @@ namespace Api.Controllers
 
             return Ok(productos);
         }
+        [HttpGet]
         
         // POST: api/Usuarios
         [HttpPost]
@@ -52,7 +53,7 @@ namespace Api.Controllers
             _context.Producto.Add(producto);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProducto), new { id = producto.CodProducto }, producto);
+            return CreatedAtAction(nameof(GetProducto), new { id = producto.ProductoId }, producto);
         }
 
         // PUT: api/Usuarios/5

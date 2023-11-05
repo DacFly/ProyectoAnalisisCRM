@@ -7,27 +7,26 @@ const input = document.getElementById("inputNombre");
 
 function cargarTareaP(){
   fetch(
-    "https://localhost:7203/Cliente/listaClientes",
+    "https://localhost:7203/TareaPendiente/listaTareasPendientes",
     {
       method: "GET",
     }
   )
-    .then((clientes) => clientes.json())
-    .then((jsonClientes) => {
+    .then((tareaP) => tareaP.json())
+    .then((jsonTareaP) => {
       contenidoTablaResultado.innerHTML = ``;
-      console.log(jsonClientes)
-      for (const cliente of jsonClientes) {
+      console.log(jsonTareaP)
+      for (const tareaP of jsonTareaP) {
         contenidoTablaResultado.innerHTML += `
               <tr class="table-primary" >
-                  <td>${cliente.clienteId}</td>
-                  <td>${cliente.cedula}</td>
-                  <td>${cliente.nombre}</td>
-                  <td>${cliente.apellido}</td>
-                  <td>${cliente.correo}</td>
-                  <td>${cliente.telefono}</td>
+                  <td>${tareaP.tareaId}</td>
+                  <td>${tareaP.clienteId}</td>
+                  <td>${tareaP.descripcion}</td>
+                  <td>${tareaP.fechaCreacion}</td>
+                  <td>${tareaP.fechaFinalizacion}</td>
                   <td>
-                    <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${cliente.ClienteId}', '${cliente.Cedula}', '${cliente.Nombre}', '${cliente.Apellido}', '${cliente.Correo}', '${cliente.Telefono}')" role="button">Editar</a>
-                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${cliente.ClienteId}')" role="button">Eliminar</a>
+                    <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${tareaP.TareaId}', '${tareaP.ClienteId}', '${tareaP.Descripcion}', '${tareaP.FechaCreacion}', '${tareaP.FechaFinalizacion}')" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.TareaId}')" role="button">Eliminar</a>
                   </td>
               </tr>`;
       }
@@ -37,86 +36,84 @@ function cargarTareaP(){
       console.error(error);
     });
 }
-cargarClientes();
+cargarTareaP();
 // Agrega un oyente de eventos al input
 input.addEventListener("input", function () {
   if (input.value != "") {
     fetch(
-      "https://localhost:7203/Cliente/ClientePorNombre/" + input.value,
+      "https://localhost:7203/TareaPendiente/BuscarTareaP/" + input.value,
       {
         method: "GET",
       }
     )
-      .then((clientes) => clientes.json())
-      .then((jsonClientes) => {
+      .then((tareaP) => tareaP.json())
+      .then((jsonTareaP) => {
         contenidoTablaResultado.innerHTML = ``;
-        console.log(jsonClientes)
-        for (const cliente of jsonClientes) {
+        console.log(jsonTareaP)
+        for (const tareaP of jsonTareaP) {
           contenidoTablaResultado.innerHTML += `
-              <tr class="table-primary" >
-                  <td>${cliente.clienteId}</td>
-                  <td>${cliente.cedula}</td>
-                  <td>${cliente.nombre}</td>
-                  <td>${cliente.apellido}</td>
-                  <td>${cliente.correo}</td>
-                  <td>${cliente.telefono}</td>
-                  <td>
-                    <a name="" id="" class="btn btn-primary" onclick="editar(${sessionStorage.getItem("id")},'${cliente.ClienteId}', '${cliente.Cedula}', '${cliente.Nombre}', '${cliente.Apellido}', '${cliente.Correo}', '${cliente.Telefono}')" role="button">Edit</a>
-                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${cliente.ClienteId}')" role="button">Elim</a>
-                  </td>
-              </tr>`;
+          <tr class="table-primary" >
+              <td>${tareaP.tareaId}</td>
+              <td>${tareaP.clienteId}</td>
+              <td>${tareaP.descripcion}</td>
+              <td>${tareaP.fechaCreacion}</td>
+              <td>${tareaP.fechaFinalizacion}</td>
+              <td>
+                <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${tareaP.TareaId}', '${tareaP.ClienteId}', '${tareaP.Descripcion}', '${tareaP.FechaCreacion}', '${tareaP.FechaFinalizacion}')" role="button">Editar</a>
+                <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.TareaId}')" role="button">Eliminar</a>
+              </td>
+          </tr>`;
         }
       })
       .catch((error) => {
         // Aquí puedes manejar los errores de la solicitud
         console.error(error);
       });
-  }else cargarClientes();
+  }else cargarTareaP();
 });
 
-function mostrarModalCrearCliente() {
-  modalCrearCliente.show();
+function mostrarModalCrearTareaP() {
+  modalCrearTareaP.show();
 }
-function cerrarModalCrearCliente() {
-  modalCrearCliente.hide();
+function cerrarModalCrearTareaP() {
+  modalCrearTareaP.hide();
 }
 
 
-function creaCliente(){
+function creaTareaP(){
   //captura los datos de la interfaz 
-  var cedula = document.getElementById('cedula').value;
-  var nombre = document.getElementById('nombre').value;
-  var apellido = document.getElementById('apellido').value;
-  var correo = document.getElementById('correo').value;
-  var telefono = document.getElementById('telefono').value;
+  var tareaId = document.getElementById('tareaId').value;
+  var clienteId = document.getElementById('clienteId').value;
+  var descripcion = document.getElementById('descripcion').value;
+  var fechaCreacion = document.getElementById('fechaCreacion').value;
+  var fechaFinalizacion = document.getElementById('fechaFinalizacion').value;
 
   //jsopn para la solicitud 
-  var cliente = {
-    clienteId: 0, // Cambiar el valor del usuarioId según corresponda
-    cedula: cedula,
-    nombre: nombre,
-    apellido: apellido,
-    correo: correo,
-    telefono: telefono
+  var tareaP = {
+    tareaId: tareaId,
+    clienteId: clienteId, // Cambiar el valor del usuarioId según corresponda
+    descripcion: descripcion,
+    fechaCreacion: fechaCreacion,
+    fechaFinalizacion: fechaFinalizacion
   };
 
   // Realizar la solicitud POST a la API para crear el evento
-  fetch('https://localhost:7203/Cliente/CrearCliente', {
+  fetch('https://localhost:7203/TareaPendiente/CrearTareaP', {
     method: "POST",
     headers: { "Content-type": "application/json" },
-    body: JSON.stringify(cliente)
+    body: JSON.stringify(tareaP)
   }).then(response => {
     if(response.status==201)
     {
-    swal("¡Cliente Agregado!", "El cliente se ha agregado correctamente.", "success");
-      cargarClintes();
-      document.getElementById('cedula').value = '';
-      document.getElementById('nombre').value = '';
-      document.getElementById('apellido').value = '';
-      document.getElementById('correo').value = '';
-      document.getElementById('telefono').value = '';
-      cerrarModalCrearCliente()
-    }else{swal("Error", "Ocurrió un error al agregar al cliente. Por favor, inténtalo nuevamente.", "error")}
+    swal("Tarea Pendiente Agregada!", "La tarea se ha agregado correctamente.", "success");
+    cargarTareaP();
+      document.getElementById('tareaId').value = '';
+      document.getElementById('clienteId').value = '';
+      document.getElementById('descripcion').value = '';
+      document.getElementById('fechaCreacion').value = '';
+      document.getElementById('fechaFinalizacion').value = '';
+      cerrarModalCrearTareaP()
+    }else{swal("Error", "Ocurrió un error al agregar la tarea. Por favor, inténtalo nuevamente.", "error")}
   })
     .catch(console.log);
 }
@@ -124,55 +121,53 @@ function creaCliente(){
 
 //EDITAR CLIENTE
 
-function cerrarModalModificarCliente(){
+function cerrarModalModificarTareaP(){
   modalEditar.hide();
 }
 
 const modalEditar = new bootstrap.Modal(
-  document.getElementById("modalEditarCliente")
+  document.getElementById("modalEditarTareaP")
 );
 var formulario = document.getElementById("frmEventos");
 
 function editar(
-  clienteId,
-  cedula, 
-  nombre, 
-  apellido,
-  correo,
-  telefono
+  tareaId,
+  clienteId, 
+  descripcion, 
+  fechaCreacion,
+  fechaFinalizacion
 ) {
+  document.getElementById("tareaId").value = tareaId;
   document.getElementById("clienteId").value = clienteId;
-  document.getElementById("cedula").value = cedula;
-  document.getElementById("nombre").value = nombre;
-  document.getElementById("apellido").value = apellido;
-  document.getElementById("correo").value = correo;
-  document.getElementById("telefono").value = telefono;
+  document.getElementById("descripcion").value = descripcion;
+  document.getElementById("fechaCreacion").value = fechaCreacion;
+  document.getElementById("fechaFinalizacion").value = fechaFinalizacion;
   modalEditar.show();
 }
 
 formulario.addEventListener("submit", function (e) { 
   e.preventDefault();
 
-  var cedula = document.getElementById("cedula").value;
-  var nombre = document.getElementById("nombre").value;
-  var apellido = document.getElementById("apellido").value;
-  var correo = document.getElementById("correo").value;
-  var telefono = document.getElementById("telefono").value;
+  var tareaId = document.getElementById("tareaId").value;
+  var clienteId = document.getElementById("clienteId").value;
+  var descripcion = document.getElementById("descripcion").value;
+  var fechaCreacion = document.getElementById("fechaCreacion").value;
+  var fechaFinalizacion = document.getElementById("fechaFinalizacion").value;
   var id = parseInt(sessionStorage.getItem("id"));
   
   
 
   var datosenviar = {
+    tareaId: tareaId,
     clienteId: clienteId,
-    cedula: cedula,
-    nombre: nombre,
-    apellido: apellido,
-    correo: correo,
-    telefono: telefono
+    descripcion: descripcion,
+    fechaCreacion: fechaCreacion,
+    fechaFinalizacion: fechaFinalizacion
+   
 
   };
   console.log(datosenviar);
-  fetch("https://localhost:7203/Cliente/EditarCliente", {
+  fetch("https://localhost:7203/TareaPendiente/EditarTareaP", {
     method: "PUT",
     headers: { "content-type": "application/json " },
     body: JSON.stringify(datosenviar),
@@ -180,11 +175,11 @@ formulario.addEventListener("submit", function (e) {
     .then((respuesta) => {
       console.log(respuesta.status);
       if (respuesta.status == 204) {
-        document.getElementById("cedula").value = "";
-        document.getElementById("nombre").value = "";
-        document.getElementById("apellido").value = "";
-        document.getElementById("correo").value = "";
-        document.getElementById("telefono").value = "";
+        document.getElementById("tareaId").value = "";
+        document.getElementById("clienteId").value = "";
+        document.getElementById("descripcion").value = "";
+        document.getElementById("fechaCreacion").value = "";
+        document.getElementById("fechaFinalizacion").value = "";
 
         
         swal(
@@ -209,7 +204,7 @@ formulario.addEventListener("submit", function (e) {
 
 
 //eliminar
-function eliminar(idCliente) {
+function eliminar() {
   swal({
     title: "Esta seguro que quiere eliminarlo?",
     text: "Una vez borrado no se podra recuperar los datos",
@@ -219,10 +214,10 @@ function eliminar(idCliente) {
   }).then((willDelete) => {
     if (willDelete) {
 
-      console.log(idCliente);
-      var idCliente = parseInt(sessionStorage.getItem("id"));
+      console.log(TareaId);
+      var TareaId = parseInt(sessionStorage.getItem("id"));
       fetch(
-        "https://localhost:7203/Cliente/BorrarCliente" + idCliente,
+        "https://localhost:7203/TareaPendiente/BorrarTareaP/" + TareaId,
         {
           method: "DELETE"
           
@@ -234,7 +229,7 @@ function eliminar(idCliente) {
               icon: "success",
             });
             cargarEventos2();
-            window.location = "Clientes.html";
+            window.location = "TareasPendientes.html";
           }else{
             swal("No se borraron los datos");
           }
@@ -245,7 +240,7 @@ function eliminar(idCliente) {
   });
 
   var datosenviar = {
-    idCliente: idCliente,
+    TareaId: TareaId,
   };
 
 }

@@ -110,7 +110,7 @@ function creaCliente(){
     if(response.status==201)
     {
     swal("¡Cliente Agregado!", "El cliente se ha agregado correctamente.", "success");
-      cargarClintes();
+    cargarClientes();
       document.getElementById('cedula').value = '';
       document.getElementById('nombre').value = '';
       document.getElementById('apellido').value = '';
@@ -223,7 +223,7 @@ function eliminar(idCliente) {
       console.log(idCliente);
       var idCliente = parseInt(sessionStorage.getItem("id"));
       fetch(
-        "https://localhost:7203/Cliente/BorrarCliente" + idCliente,
+        "https://localhost:7203/Cliente/BorrarCliente/" + idCliente,
         {
           method: "DELETE"
           

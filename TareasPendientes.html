@@ -52,7 +52,7 @@
 
                </div>
                <div class="col-6">
-                <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
+                <input type="text" class="form-control" name="evento" id="inputCodigo" aria-describedby="helpId"
                   placeholder="Buscar Tarea mediante ID">
                   <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearTareaP()" role="button">Agregar Tarea</a>  
                </div>
@@ -64,10 +64,13 @@
           <caption></caption>
           <tr>
             <th>TareaId</th>
-            <th>Descripción</th>
+            <th>Código Tarea</th>
+            <th>Nombre Tarea</th>
             <th>Nombre Cliente</th>
+            <th>Descripción</th>
             <th>Fecha Creación</th>
             <th>Fecha Finalización</th>
+            <th>Acciones</th>
             
           </tr>
         </thead>
@@ -82,20 +85,20 @@
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Modificar Cliente</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalModificarCliente()" style="background-color: transparent; border: 0;">X</button>
+          <h5 class="modal-title" id="modalTitleId"> Modificar Tarea Pendiente</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalModificarTareaP()" style="background-color: transparent; border: 0;">X</button>
         </div>
         <div class="modal-body" style="width: auto;">
 
           <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="clienteId" required hidden>
+            <input type="text" class="form-control" id="eTareaId" required hidden>
             
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Cédula</label>
-                  <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
-                    placeholder="Cédula del cliente">
+                  <label for="" class="form-label">Código de la Tarea</label>
+                  <input type="text" class="form-control" name="" id="eCodigoTarea" aria-describedby="helpId"
+                    placeholder="Código de la tarea pendiente">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
@@ -103,9 +106,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" name="nombre" id="nombre"
-                    aria-describedby="helpId" placeholder="Nombre del cliente">
+                  <label for="" class="form-label">Nombre de la Tarea</label>
+                  <input type="text" class="form-control" name="eNombreT" id="eNombreT"
+                    aria-describedby="helpId" placeholder="Nombre de la tarea pendiente">
                   <small id="helpId" class="form-text text-muted"> </small>
                 </div>
               </div>
@@ -113,9 +116,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Apellido</label>
-                  <input type="text" class="form-control" name="apellido" id="apellido" aria-describedby="helpId"
-                    placeholder="Apellido del cliente">
+                  <label for="" class="form-label">Nombre del Cliente</label>
+                  <input type="text" class="form-control" name="" id="eNombreCliente" aria-describedby="helpId"
+                    placeholder="Nombre del cliente asociado">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
@@ -123,23 +126,32 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Correo</label>
-                  <input type="text" class="form-control" name="hora" id="hora" aria-describedby="helpId"
-                    placeholder="Correo del cliente">
-                  <small id="helpId" class="form-text text-muted"></small>
+                  <label for="" class="form-label">Descripcion</label>
+                  <textarea name="comentarios" rows="7" cols="55" id="eDescripcion"></textarea>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Teléfono</label>
-                  <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="helpId"
-                    placeholder="Teléfono del cliente">
-                  <small id="helpId" class="form-text text-muted"></small>
+                  <label for="" class="form-label">Fecha Inicio</label>
+                  <input type="date" class="form-control" name="fechaEvento" id="eFechaCreacion" aria-describedby="helpId"
+                    placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
+                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de inicio de la tarea</small>
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Fecha Finaliza</label>
+                  <input type="date" class="form-control" name="fechaEvento" id="eFechaFinalizacion" aria-describedby="helpId"
+                    placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
+                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de finalizacion de la tarea</small>
+                </div>
+              </div>
+            </div>
+           
             <div class="form-group form-check p-2" style="text-align: left;">
               <button type="submit" class="btn btn-primary">
                 Actualizar
@@ -153,83 +165,94 @@
 
 
   <div class="modal " id="modalCrearTareaP" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-    aria-labelledby="modalTitleId" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-      
-      <div class="modal-content">
+  aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    
+    <div class="modal-content">
 
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Agregar Tarea Pendiente</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearTareaP()"
-            style="background-color: transparent; border: 0;">X</button>
-        </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleId"> Agregar Tarea Pendiente</h5>
+        <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearTareaP()"
+          style="background-color: transparent; border: 0;">X</button>
+      </div>
 
-        <div class="modal-body" style="width: auto;">
+      <div class="modal-body" style="width: auto;">
 
-          <form class="m-needs-validation" novalidate id="frmEventos">
-            
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">TareaID</label>
-                  <input type="text" class="form-control" name="TareaId" id="tareaId" aria-describedby="helpId"
-                    placeholder="Código de la tarea pendiente">
-                  <small id="helpId" class="form-text text-muted"></small>
-                </div>
+        <form class="m-needs-validation" novalidate id="frmEventos">
+          <input type="text" class="form-control" id="tareaId" required hidden>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="" class="form-label">Código de la Tarea</label>
+                <input type="text" class="form-control" name="" id="codigoTarea" aria-describedby="helpId"
+                  placeholder="Código de la tarea pendiente">
+                <small id="helpId" class="form-text text-muted"></small>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Descripcion</label>
-                  <textarea name="comentarios" rows="7" cols="55" id="descripcion">Descripcion de la tarea</textarea>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="" class="form-label">Nombre de la Tarea</label>
+                <input type="text" class="form-control" name="nombre" id="nombreT" aria-describedby="helpId"
+                  placeholder="Nombre de la tarea pendiente">
+                <small id="helpId" class="form-text text-muted"></small>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">ID del cliente</label>
-                  <input type="text" class="form-control" name="" id="clienteId"
-                    aria-describedby="helpId" placeholder="ID del cliente">
-                  <small id="helpId" class="form-text text-muted"></small>
-                </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="" class="form-label">Nombre del Cliente</label>
+                <input type="text" class="form-control" name="" id="nombreCliente"
+                  aria-describedby="helpId" placeholder="Nombre del cliente asociado">
+                <small id="helpId" class="form-text text-muted"></small>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Fecha de Creación de la tarea</label>
-                  <input type="date" class="form-control" name="" id="fechaCreacion" aria-describedby="helpId"
-                    placeholder="Fecha del inicio de la tarea" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de creación de la tarea</small>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="" class="form-label">Descripcion</label>
+                <textarea name="comentarios" rows="7" cols="55" id="descripcion"></textarea>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Fecha de Finalización de la tarea</label>
-                  <input type="date" class="form-control" name="" id="fechaFinalizacion" aria-describedby="helpId"
-                    placeholder="Fecha de la finalizacion de la tarea" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de finalización de la tarea</small>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="" class="form-label">Fecha Inicio</label>
+                <input type="date" class="form-control" name="fechaEvento" id="fechaCreacion" aria-describedby="helpId"
+                  placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
+                <small id="helpId" class="form-text text-muted"> Ingresa la fecha de inicio de la tarea</small>
               </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="" class="form-label">Fecha Finaliza</label>
+                <input type="date" class="form-control" name="fechaEvento" id="fechaFinalizacion" aria-describedby="helpId"
+                  placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
+                <small id="helpId" class="form-text text-muted"> Ingresa la fecha de finalizacion de la tarea</small>
+              </div>
+            </div>
+          </div>
 
-            <div class="form-group form-check p-2" style="text-align: left;">
-              <button type="button" class="btn btn-primary" onclick="creaTareaP()">
-                Agregar Tarea Pendiente
-              </button>
-            </div>
-          </form>
-
-        </div>
+          <div class="form-group form-check p-2" style="text-align: left;">
+            <button type="button" class="btn btn-primary" onclick="creaTareaP()">
+              Agregar Tarea
+            </button>
+          </div>
+        </form>
 
       </div>
 
     </div>
+
   </div>
+</div>
 
   
   <script src="js/jquery-3.3.1.min.js"></script>

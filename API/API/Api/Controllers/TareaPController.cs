@@ -42,7 +42,23 @@ namespace Api.Controllers
 
             return Ok(tareaP);
         }
-        
+
+        [HttpGet]
+        [Route("TareaPorID/{codigoTarea}")]
+        public IActionResult GetTareaPorCodigo(string codigoTarea)
+        {
+            if (string.IsNullOrWhiteSpace(codigoTarea))
+            {
+                return BadRequest("El código de la tarea no puede estar vacío.");
+            }
+
+            var tareaP = _context.TareaPendiente
+                .FromSqlRaw("EXEC BuscarTareaPorID @CodigoTarea", new SqlParameter("codigoTarea", codigoTarea))
+                .ToList();
+
+            return Ok(tareaP);
+        }
+
         // POST: api/Usuarios
         [HttpPost]
         [Route("CrearTareaP")]

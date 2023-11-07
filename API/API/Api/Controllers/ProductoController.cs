@@ -43,8 +43,25 @@ namespace Api.Controllers
 
             return Ok(productos);
         }
+
         [HttpGet]
-        
+        [Route("ProductoPorID/{codProducto}")]
+        public IActionResult GetProductoPorCodigo(string codProducto)
+        {
+            if (string.IsNullOrWhiteSpace(codProducto))
+            {
+                return BadRequest("El código del producto no puede estar vacío.");
+            }
+
+            var productos = _context.Producto
+                .FromSqlRaw("EXEC BuscarProductoPorID @CodProducto", new SqlParameter("codProducto", codProducto))
+                .ToList();
+
+            return Ok(productos);
+        }
+
+
+
         // POST: api/Usuarios
         [HttpPost]
         [Route("CrearProducto")]

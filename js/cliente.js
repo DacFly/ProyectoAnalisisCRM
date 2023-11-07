@@ -27,8 +27,8 @@ function cargarClientes(){
                   <td>${cliente.correo}</td>
                   <td>${cliente.telefono}</td>
                   <td>
-                    <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${cliente.ClienteId}', '${cliente.Cedula}', '${cliente.Nombre}', '${cliente.Apellido}', '${cliente.Correo}', '${cliente.Telefono}')" role="button">Editar</a>
-                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${cliente.ClienteId}')" role="button">Eliminar</a>
+                    <a name="" id="" class="btn btn-info" onclick="editar('${cliente.clienteId}','${cliente.cedula}', '${cliente.nombre}', '${cliente.apellido}', '${cliente.correo}', '${cliente.telefono}')" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${cliente.clienteId}')" role="button">Eliminar</a>
                   </td>
               </tr>`;
       }
@@ -100,7 +100,7 @@ function creaCliente(){
     correo: correo,
     telefono: telefono
   };
-
+  
   // Realizar la solicitud POST a la API para crear el evento
   fetch('https://localhost:7203/Cliente/CrearCliente', {
     method: "POST",
@@ -134,35 +134,27 @@ const modalEditar = new bootstrap.Modal(
 );
 var formulario = document.getElementById("frmEventos");
 
-function editar(
-  clienteId,
-  cedula, 
-  nombre, 
-  apellido,
-  correo,
-  telefono
-) {
-  document.getElementById("clienteId").value = clienteId;
-  document.getElementById("cedula").value = cedula;
-  document.getElementById("nombre").value = nombre;
-  document.getElementById("apellido").value = apellido;
-  document.getElementById("correo").value = correo;
-  document.getElementById("telefono").value = telefono;
+function editar(clienteId,cedula, nombre, apellido,correo,telefono) {
+  document.getElementById("eClienteId").value = clienteId;
+  document.getElementById("eCedula").value = cedula;
+  document.getElementById("eNombre").value = nombre;
+  document.getElementById("eApellido").value = apellido;
+  document.getElementById("eCorreo").value = correo;
+  document.getElementById("eTelefono").value = telefono;
   modalEditar.show();
 }
 
 formulario.addEventListener("submit", function (e) { 
   e.preventDefault();
+  var clienteId = document.getElementById("eClienteId").value;
+  var cedula = document.getElementById("eCedula").value;
+  var nombre = document.getElementById("eNombre").value;
+  var apellido = document.getElementById("eApellido").value;
+  var correo = document.getElementById("eCorreo").value;
+  var telefono = document.getElementById("eTelefono").value;
 
-  var cedula = document.getElementById("cedula").value;
-  var nombre = document.getElementById("nombre").value;
-  var apellido = document.getElementById("apellido").value;
-  var correo = document.getElementById("correo").value;
-  var telefono = document.getElementById("telefono").value;
-  var id = parseInt(sessionStorage.getItem("id"));
   
   
-
   var datosenviar = {
     clienteId: clienteId,
     cedula: cedula,
@@ -197,7 +189,7 @@ formulario.addEventListener("submit", function (e) {
           if (willDelete) {
       
             modalEditar.hide();
-            cargarEventos2();
+            cargarClientes();
           } 
         });
       }
@@ -219,9 +211,7 @@ function eliminar(idCliente) {
     dangerMode: true,
   }).then((willDelete) => {
     if (willDelete) {
-
       console.log(idCliente);
-      var idCliente = parseInt(sessionStorage.getItem("id"));
       fetch(
         "https://localhost:7203/Cliente/BorrarCliente/" + idCliente,
         {
@@ -229,13 +219,13 @@ function eliminar(idCliente) {
           
         }
       ) //url de peticion de datos
-        .then(datosrepuesta => { 
-          if(datosrepuesta.status == 200){
-            swal("Eliminado correctamente", {
-              icon: "success",
-            });
-            cargarEventos2();
-            window.location = "Clientes.html";
+        .then(datosrepuesta => {
+          console.log(datosrepuesta.status); 
+          if(datosrepuesta.status == 204){
+            swal("¡Cliente Eliminado!", "El cliente se ha eliminado correctamente.", "success");
+        
+            cargarClientes();
+       
           }else{
             swal("No se borraron los datos");
           }
@@ -244,10 +234,5 @@ function eliminar(idCliente) {
       //Muestra el resultado de la peticion
     } 
   });
-
-  var datosenviar = {
-    idCliente: idCliente,
-  };
-
 }
 

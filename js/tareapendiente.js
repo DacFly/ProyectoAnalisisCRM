@@ -2,7 +2,7 @@ var contenidoTablaResultado = document.querySelector("#resultados");
 //modal para crear eventos
 var modalCrearTareaP = new bootstrap.Modal(document.getElementById('modalCrearTareaP'))
 //campo de texto para busqueda de la cedula
-const input = document.getElementById("inputNombre");
+const input = document.getElementById("inputCodigo");
 
 
 function cargarTareaP(){
@@ -20,13 +20,15 @@ function cargarTareaP(){
         contenidoTablaResultado.innerHTML += `
               <tr class="table-primary" >
                   <td>${tareaP.tareaId}</td>
-                  <td>${tareaP.clienteId}</td>
+                  <td>${tareaP.codigoTarea}</td>
+                  <td>${tareaP.nombreT}</td>
+                  <td>${tareaP.nombreCliente}</td>
                   <td>${tareaP.descripcion}</td>
                   <td>${tareaP.fechaCreacion}</td>
                   <td>${tareaP.fechaFinalizacion}</td>
                   <td>
-                    <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${tareaP.TareaId}', '${tareaP.ClienteId}', '${tareaP.Descripcion}', '${tareaP.FechaCreacion}', '${tareaP.FechaFinalizacion}')" role="button">Editar</a>
-                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.TareaId}')" role="button">Eliminar</a>
+                    <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreCliente}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.tareaId}')" role="button">Eliminar</a>
                   </td>
               </tr>`;
       }
@@ -53,15 +55,17 @@ input.addEventListener("input", function () {
         for (const tareaP of jsonTareaP) {
           contenidoTablaResultado.innerHTML += `
           <tr class="table-primary" >
-              <td>${tareaP.tareaId}</td>
-              <td>${tareaP.clienteId}</td>
-              <td>${tareaP.descripcion}</td>
-              <td>${tareaP.fechaCreacion}</td>
-              <td>${tareaP.fechaFinalizacion}</td>
-              <td>
-                <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${tareaP.TareaId}', '${tareaP.ClienteId}', '${tareaP.Descripcion}', '${tareaP.FechaCreacion}', '${tareaP.FechaFinalizacion}')" role="button">Editar</a>
-                <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.TareaId}')" role="button">Eliminar</a>
-              </td>
+          <td>${tareaP.tareaId}</td>
+          <td>${tareaP.codigoTarea}</td>
+          <td>${tareaP.nombreT}</td>
+          <td>${tareaP.nombreCliente}</td>
+          <td>${tareaP.descripcion}</td>
+          <td>${tareaP.fechaCreacion}</td>
+          <td>${tareaP.fechaFinalizacion}</td>
+          <td>
+            <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreCliente}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.tareaId}')" role="button">Eliminar</a>
+          </td>
           </tr>`;
         }
       })
@@ -71,6 +75,45 @@ input.addEventListener("input", function () {
       });
   }else cargarTareaP();
 });
+
+
+
+input.addEventListener("input", function () {
+  if (input.value != "") {
+    fetch(
+      "https://localhost:7203/TareaPendiente/TareaPorID/" + input.value,
+      {
+        method: "GET",
+      }
+    )
+      .then((tareaP) => tareaP.json())
+      .then((jsonTareaP) => {
+        contenidoTablaResultado.innerHTML = ``;
+        console.log(jsonTareaP)
+        for (const tareaP of jsonTareaP) {
+          contenidoTablaResultado.innerHTML += `
+          <tr class="table-primary" >
+          <td>${tareaP.tareaId}</td>
+          <td>${tareaP.clienteId}</td>
+          <td>${tareaP.descripcion}</td>
+          <td>${tareaP.fechaCreacion}</td>
+          <td>${tareaP.fechaFinalizacion}</td>
+          <td>
+            <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${tareaP.TareaId}', '${tareaP.ClienteId}', '${tareaP.Descripcion}', '${tareaP.FechaCreacion}', '${tareaP.FechaFinalizacion}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.TareaId}')" role="button">Eliminar</a>
+          </td>
+      </tr>`;
+        }
+      })
+      .catch((error) => {
+        // Aquí puedes manejar los errores de la solicitud
+        console.error(error);
+      });
+  }else cargarTareaP();
+});
+
+
+
 
 function mostrarModalCrearTareaP() {
   modalCrearTareaP.show();
@@ -82,16 +125,20 @@ function cerrarModalCrearTareaP() {
 
 function creaTareaP(){
   //captura los datos de la interfaz 
-  var tareaId = document.getElementById('tareaId').value;
-  var clienteId = document.getElementById('clienteId').value;
+  
+  var codigoTarea = document.getElementById("codigoTarea").value;
+  var nombreT = document.getElementById("nombreT").value;
+  var nombreCliente = document.getElementById('nombreCliente').value;
   var descripcion = document.getElementById('descripcion').value;
   var fechaCreacion = document.getElementById('fechaCreacion').value;
   var fechaFinalizacion = document.getElementById('fechaFinalizacion').value;
 
   //jsopn para la solicitud 
   var tareaP = {
-    tareaId: tareaId,
-    clienteId: clienteId, // Cambiar el valor del usuarioId según corresponda
+    tareaId: 0,
+    codigoTarea: codigoTarea,
+    nombreT: nombreT,
+    nombreCliente: nombreCliente, 
     descripcion: descripcion,
     fechaCreacion: fechaCreacion,
     fechaFinalizacion: fechaFinalizacion
@@ -108,7 +155,9 @@ function creaTareaP(){
     swal("Tarea Pendiente Agregada!", "La tarea se ha agregado correctamente.", "success");
     cargarTareaP();
       document.getElementById('tareaId').value = '';
-      document.getElementById('clienteId').value = '';
+      document.getElementById('codigoTarea').value = '';
+      document.getElementById('nombreT').value = '';
+      document.getElementById('nombreCliente').value = '';
       document.getElementById('descripcion').value = '';
       document.getElementById('fechaCreacion').value = '';
       document.getElementById('fechaFinalizacion').value = '';
@@ -130,41 +179,39 @@ const modalEditar = new bootstrap.Modal(
 );
 var formulario = document.getElementById("frmEventos");
 
-function editar(
-  tareaId,
-  clienteId, 
-  descripcion, 
-  fechaCreacion,
-  fechaFinalizacion
-) {
-  document.getElementById("tareaId").value = tareaId;
-  document.getElementById("clienteId").value = clienteId;
-  document.getElementById("descripcion").value = descripcion;
-  document.getElementById("fechaCreacion").value = fechaCreacion;
-  document.getElementById("fechaFinalizacion").value = fechaFinalizacion;
+function editar(tareaId,codigoTarea,nombreT,nombreCliente, descripcion, fechaCreacion, fechaFinalizacion) {
+  document.getElementById("eTareaId").value = tareaId;
+  document.getElementById("eCodigoTarea").value = codigoTarea ;
+  document.getElementById("eNombreT").value = nombreT;
+  document.getElementById("eNombreCliente").value =nombreCliente ;
+  document.getElementById("eDescripcion").value = descripcion;
+  document.getElementById("eFechaCreacion").value = fechaCreacion;
+  document.getElementById("eFechaFinalizacion").value = fechaFinalizacion;
   modalEditar.show();
 }
 
 formulario.addEventListener("submit", function (e) { 
   e.preventDefault();
 
-  var tareaId = document.getElementById("tareaId").value;
-  var clienteId = document.getElementById("clienteId").value;
-  var descripcion = document.getElementById("descripcion").value;
-  var fechaCreacion = document.getElementById("fechaCreacion").value;
-  var fechaFinalizacion = document.getElementById("fechaFinalizacion").value;
-  var id = parseInt(sessionStorage.getItem("id"));
+  var tareaId = document.getElementById("eTareaId").value;
+  var codigoTarea = document.getElementById("eCodigoTarea").value;
+  var nombreT = document.getElementById("eNombreT").value;
+  var nombreCliente = document.getElementById("eNombreCliente").value;
+  var descripcion = document.getElementById("eDescripcion").value;
+  var fechaCreacion = document.getElementById("eFechaCreacion").value;
+  var fechaFinalizacion = document.getElementById("eFechaFinalizacion").value;
   
   
 
   var datosenviar = {
     tareaId: tareaId,
-    clienteId: clienteId,
+    codigoTarea: codigoTarea,
+    nombreT: nombreT,
+    nombreCliente: nombreCliente,
     descripcion: descripcion,
     fechaCreacion: fechaCreacion,
     fechaFinalizacion: fechaFinalizacion
    
-
   };
   console.log(datosenviar);
   fetch("https://localhost:7203/TareaPendiente/EditarTareaP", {
@@ -176,7 +223,9 @@ formulario.addEventListener("submit", function (e) {
       console.log(respuesta.status);
       if (respuesta.status == 204) {
         document.getElementById("tareaId").value = "";
-        document.getElementById("clienteId").value = "";
+        document.getElementById("codigoTarea").value = "" ;
+        document.getElementById("nombreT").value = "";
+        document.getElementById("nombreCliente").value = "" ;
         document.getElementById("descripcion").value = "";
         document.getElementById("fechaCreacion").value = "";
         document.getElementById("fechaFinalizacion").value = "";
@@ -191,7 +240,7 @@ formulario.addEventListener("submit", function (e) {
           if (willDelete) {
       
             modalEditar.hide();
-            cargarEventos2();
+            cargarTareaP();
           } 
         });
       }
@@ -204,7 +253,7 @@ formulario.addEventListener("submit", function (e) {
 
 
 //eliminar
-function eliminar() {
+function eliminar(tareaId) {
   swal({
     title: "Esta seguro que quiere eliminarlo?",
     text: "Una vez borrado no se podra recuperar los datos",
@@ -214,34 +263,31 @@ function eliminar() {
   }).then((willDelete) => {
     if (willDelete) {
 
-      console.log(TareaId);
-      var TareaId = parseInt(sessionStorage.getItem("id"));
+      console.log(tareaId);
+      
       fetch(
-        "https://localhost:7203/TareaPendiente/BorrarTareaP/" + TareaId,
+        "https://localhost:7203/TareaPendiente/BorrarTareaP/" + tareaId,
         {
           method: "DELETE"
           
         }
       ) //url de peticion de datos
-        .then(datosrepuesta => { 
-          if(datosrepuesta.status == 200){
-            swal("Eliminado correctamente", {
-              icon: "success",
-            });
-            cargarEventos2();
-            window.location = "TareasPendientes.html";
-          }else{
-            swal("No se borraron los datos");
-          }
-        })
-        .catch(console.log); //muestra errores
+      .then(datosrepuesta => {
+        console.log(datosrepuesta.status); 
+        if(datosrepuesta.status == 204){
+          swal("¡Tarea Pendiente Eliminada!", "La tarea se ha eliminado correctamente.", "success");
+      
+          cargarTareaP();
+     
+        }else{
+          swal("No se borraron los datos");
+        }
+      })
+      .catch(console.log); //muestra errores
       //Muestra el resultado de la peticion
     } 
   });
 
-  var datosenviar = {
-    TareaId: TareaId,
-  };
 
 }
 

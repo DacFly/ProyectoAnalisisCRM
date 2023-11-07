@@ -49,8 +49,8 @@
 
                </div>
                <div class="col-6">
-                <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
-                  placeholder="Buscar  Producto">
+                <input type="text" class="form-control" name="evento" id="inputCodigo" aria-describedby="helpId"
+                  placeholder="Buscar Producto">
                   <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearProducto()" role="button">Agregar Producto</a>  
                </div>
             </div>
@@ -65,6 +65,7 @@
             <th>Nombre del Producto</th>
             <th>Descripción del Producto</th>
             <th>Precio</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody class="table-group-divider" id="resultados">
@@ -84,13 +85,13 @@
         <div class="modal-body" style="width: auto;">
 
           <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="productoId" required hidden>
+            <input type="text" class="form-control" id="eProductoId" required hidden>
             
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Código del Producto</label>
-                  <input type="text" class="form-control" name="codProducto" id="codProducto" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="codProducto" id="eCodProducto" aria-describedby="helpId"
                     placeholder="Código del producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
@@ -100,7 +101,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Nombre del Producto</label>
-                  <input type="text" class="form-control" name="nombreProducto" id="nombreProducto"
+                  <input type="text" class="form-control" name="nombreProducto" id="eNombreProducto"
                     aria-describedby="helpId" placeholder="Nombre del producto">
                   <small id="helpId" class="form-text text-muted"> </small>
                 </div>
@@ -110,7 +111,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Descripcion</label>
-                  <textarea name="comentarios" rows="7" cols="55" id="descripcionProducto"></textarea>
+                  <textarea name="comentarios" rows="7" cols="55" id="eDescripcionProducto"></textarea>
                 </div>
               </div>
             </div>
@@ -119,7 +120,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Precio</label>
-                  <input type="text" class="form-control" name="" id="precioProducto" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="" id="ePrecioProducto" aria-describedby="helpId"
                     placeholder="Precio del Producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
@@ -152,7 +153,7 @@
         <div class="modal-body" style="width: auto;">
 
           <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="m-idEvento" required hidden>
+            <input type="text" class="form-control" id="productoId" required hidden>
 
             <div class="row">
               <div class="col-md-12">
@@ -169,7 +170,7 @@
                 <div class="form-group">
                   <label for="" class="form-label">Nombre del Producto</label>
                   <input type="text" class="form-control" name="nombre" id="nombreProducto" aria-describedby="helpId"
-                    placeholder="Nombre del cliente">
+                    placeholder="Nombre del producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
@@ -187,7 +188,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Precio del producto</label>
-                  <input type="tel" class="form-control" name="telefono" id="precioProducto" aria-describedby="helpId"
+                  <input type="text" class="form-control" name="telefono" id="precioProducto" aria-describedby="helpId"
                     placeholder="Precio del Producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>

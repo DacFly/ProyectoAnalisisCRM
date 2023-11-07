@@ -3,7 +3,7 @@ var contenidoTablaResultado = document.querySelector("#resultados");
 //modal para crear eventos
 var modalCrearProducto = new bootstrap.Modal(document.getElementById('modalCrearProducto'))
 //campo de texto para busqueda de la cedula
-const input = document.getElementById("inputNombre");
+const input = document.getElementById("inputCodigo");
 
 
 function cargarProductos(){
@@ -26,8 +26,8 @@ function cargarProductos(){
                   <td>${producto.descripcionProducto}</td>
                   <td>${producto.precioProducto}</td>
                   <td>
-                    <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${producto.ProductoId}', '${producto.CodProducto}', '${producto.NombreProducto}', '${producto.DescripcionProducto}', '${producto.PrecioProducto}')" role="button">Editar</a>
-                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${producto.ProductoId}')" role="button">Eliminar</a>
+                    <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.nombreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}')" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${producto.productoId}')" role="button">Eliminar</a>
                   </td>
               </tr>`;
       }
@@ -38,8 +38,40 @@ function cargarProductos(){
     });
 }
 cargarProductos();
-// Agrega un oyente de eventos al input ESTO AÚN NO PUEDO
 
+input.addEventListener("input", function () {
+  if (input.value != "") {
+    fetch(
+      "https://localhost:7203/Producto/ProductoPorID/" + input.value,
+      {
+        method: "GET",
+      }
+    )
+      .then((productos) => productos.json())
+      .then((jsonProductos) => {
+        contenidoTablaResultado.innerHTML = ``;
+        console.log(jsonProductos)
+        for (const producto of jsonProductos) {
+          contenidoTablaResultado.innerHTML += `
+          <tr class="table-primary" >
+          <td>${producto.productoId}</td>
+          <td>${producto.codProducto}</td>
+          <td>${producto.nombreProducto}</td>
+          <td>${producto.descripcionProducto}</td>
+          <td>${producto.precioProducto}</td>
+          <td>
+            <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.combreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-danger" onclick="eliminar('${producto.productoId}')" role="button">Eliminar</a>
+          </td>
+      </tr>`;
+        }
+      })
+      .catch((error) => {
+        // Aquí puedes manejar los errores de la solicitud
+        console.error(error);
+      });
+  }else cargarProductos();
+});
 
 
 function mostrarModalCrearProducto() {
@@ -67,8 +99,10 @@ function creaProducto(){
     precioProducto: precioProducto
   };
 
+  console.log(producto);
   // Realizar la solicitud POST a la API para crear el evento
   fetch('https://localhost:7203/Producto/CrearProducto', {
+    
     method: "POST",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(producto)
@@ -99,30 +133,24 @@ const modalEditar = new bootstrap.Modal(
 );
 var formulario = document.getElementById("frmEventos");
 
-function editar(
-    productoId,
-    codProducto, 
-    nombreProducto, 
-    descripcionProducto,
-    precioProducto
-) {
-  document.getElementById("productoId").value = productoId;
-  document.getElementById("codProducto").value = codProducto;
-  document.getElementById("nombreProducto").value = nombreProducto;
-  document.getElementById("descripcionProducto").value = descripcionProducto;
-  document.getElementById("precioProducto").value = precioProducto;
+function editar(productoId,codProducto, nombreProducto, descripcionProducto,precioProducto) {
+  document.getElementById("eProductoId").value = productoId;
+  document.getElementById("eCodProducto").value = codProducto;
+  document.getElementById("eNombreProducto").value = nombreProducto;
+  document.getElementById("eDescripcionProducto").value = descripcionProducto;
+  document.getElementById("ePrecioProducto").value = precioProducto;
   modalEditar.show();
 }
 
 formulario.addEventListener("submit", function (e) { 
   e.preventDefault();
 
-  var codProducto = document.getElementById("codProducto").value;
-  var nombreProducto = document.getElementById("nombreProducto").value;
-  var descripcionProducto = document.getElementById("descripcionProducto").value;
-  var precioProducto = document.getElementById("precioProducto").value;
-  var id = parseInt(sessionStorage.getItem("id"));
-  
+  var productoId = document.getElementById("eProductoId").value;
+  var codProducto = document.getElementById("eCodProducto").value;
+  var nombreProducto = document.getElementById("eNombreProducto").value;
+  var descripcionProducto = document.getElementById("eDescripcionProducto").value;
+  var precioProducto = document.getElementById("ePrecioProducto").value;
+
   
 
   var datosenviar = {
@@ -144,7 +172,6 @@ formulario.addEventListener("submit", function (e) {
       if (respuesta.status == 204) {
         document.getElementById("codProducto").value = "";
         document.getElementById("nombreProducto").value = "";
-        document.getElementById("apellido").value = "";
         document.getElementById("descripcionProducto").value = "";
         document.getElementById("precioProducto").value = "";
 
@@ -158,7 +185,7 @@ formulario.addEventListener("submit", function (e) {
           if (willDelete) {
       
             modalEditar.hide();
-            cargarEventos2();
+            cargarProductos();
           } 
         });
       }
@@ -182,7 +209,6 @@ function eliminar(productoId) {
     if (willDelete) {
 
       console.log(productoId);
-      var productoId = parseInt(sessionStorage.getItem("id"));
       fetch(
         "https://localhost:7203/Producto/BorrarProducto/" + productoId,
         {
@@ -190,18 +216,18 @@ function eliminar(productoId) {
           
         }
       ) //url de peticion de datos
-        .then(datosrepuesta => { 
-          if(datosrepuesta.status == 200){
-            swal("Eliminado correctamente", {
-              icon: "success",
-            });
-            cargarEventos2();
-            window.location = "Producto.html";
-          }else{
-            swal("No se borraron los datos");
-          }
-        })
-        .catch(console.log); //muestra errores
+      .then(datosrepuesta => {
+        console.log(datosrepuesta.status); 
+        if(datosrepuesta.status == 204){
+          swal("¡Producto Eliminado!", "El producto se ha eliminado correctamente.", "success");
+      
+          cargarProductos();
+     
+        }else{
+          swal("No se borraron los datos");
+        }
+      })
+      .catch(console.log); //muestra errores
       //Muestra el resultado de la peticion
     } 
   });

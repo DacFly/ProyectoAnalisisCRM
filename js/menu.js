@@ -45,7 +45,7 @@ contenido.innerHTML += `<div class="container-fluid">
 
 
 
-var modalCrearEvento = new bootstrap.Modal(document.getElementById('modalCrearEvento'))
+//var modalCrearEvento = new bootstrap.Modal(document.getElementById('modalCrearEvento'))
 
 function mostrarModalCrearEvento() {
   modalCrearEvento.show();

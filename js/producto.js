@@ -235,5 +235,4 @@ function eliminar(productoId) {
   var datosenviar = {
     productoId: productoId,
   };
-
 }

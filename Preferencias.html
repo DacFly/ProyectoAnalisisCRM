@@ -41,14 +41,32 @@
 
     <div class="table-responsive container-fluid">
       <table class="table table-striped table-hover table-borderless table-success align-middle">
-        <h2>Preferencias</h2>
+        <div class="row">
+          <div class="col-6"> <!-- Primera columna con mitad del ancho (6 de 12 columnas) -->
+            <h2>Preferencias del Cliente</h2>
+          </div>
+          <div class="col-6 text-right"> <!-- Segunda columna con mitad del ancho (6 de 12 columnas) y alineación a la derecha -->
+            <div class="row">
+               <div class="col-6">
+
+               </div>
+               <div class="col-6">
+                <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
+                  placeholder="Buscar Cliente">
+                  <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearPreferencia()" role="button">Agregar Preferencia</a>  
+               </div>
+            </div>
+            
+          </div>
+        </div>
         <thead class="table-light">
           <caption></caption>
           <tr>
-            <th>PreferenciasId</th>
+            <th>Id Referencia</th>
+            <th>Código Preferencia</th>
             <th>Nombre Cliente</th>
-            <th>Nombre Producto</th>
-            <th>Descripción</th>
+            <th>Preferencias</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody class="table-group-divider" id="resultados">
@@ -57,82 +75,107 @@
     </div>
   </div>
 
+  <div class="modal " id="modalEditarPreferencia" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitleId"> Modificar Preferencias del cliente</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalModificarPreferencia()" style="background-color: transparent; border: 0;">X</button>
+        </div>
+        <div class="modal-body" style="width: auto;">
 
-  <div class="modal " id="modalCrearEvento" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+          <form class="m-needs-validation" novalidate id="frmEventos">
+            <input type="text" class="form-control" id="eIdPreferencia" required hidden>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Código de la preferencia</label>
+                  <input type="text" class="form-control" name="" id="eCodigoPreferencia" aria-describedby="helpId"
+                    placeholder="Código de la preferencia">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Nombre del cliente</label>
+                  <input type="text" class="form-control" name="" id="eNombreCliente"
+                    aria-describedby="helpId" placeholder="Nombre del cliente">
+                  <small id="helpId" class="form-text text-muted"> </small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Preferencias</label>
+                  <textarea name="comentarios" rows="7" cols="55" id="eDescripcion"></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group form-check p-2" style="text-align: left;">
+              <button type="submit" class="btn btn-primary">
+                Actualizar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal " id="modalCrearPreferencia" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
     aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Agregar Evento</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearEvento()"
+          <h5 class="modal-title" id="modalTitleId"> Agregar Preferencia del Cliente</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearPreferencia()"
             style="background-color: transparent; border: 0;">X</button>
         </div>
 
         <div class="modal-body" style="width: auto;">
 
           <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="m-idEvento" required hidden>
+            <input type="text" class="form-control" id="idPreferencia" required hidden>
 
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Titulo</label>
-                  <input type="text" class="form-control" name="evento" id="evento" aria-describedby="helpId"
-                    placeholder="Titulo del evento">
-                  <small id="helpId" class="form-text text-muted"> Ingresa el titulo del evento</small>
+                  <label for="" class="form-label">Código de la Preferencia</label>
+                  <input type="text" class="form-control" name="evento" id="codigoPreferencia" aria-describedby="helpId"
+                    placeholder="Ingrese el código de la preferencia">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Direccion</label>
-                  <input type="text" class="form-control" name="evento" id="direccion" aria-describedby="helpId"
-                    placeholder="Direccion">
-                  <small id="helpId" class="form-text text-muted"> Ingrese direccion </small>
+                  <label for="" class="form-label">Nombre Cliente</label>
+                  <input type="text" class="form-control" name="evento" id="nombreCliente" aria-describedby="helpId"
+                    placeholder="Ingrese el nombre del cliente">
+                  <small id="helpId" class="form-text text-muted">  </small>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Fecha Publicacion</label>
-                  <input type="Date" class="form-control" name="fechaPublicacion" id="fechaPublicacion"
-                    aria-describedby="helpId" placeholder="Fecha de Publicacion">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de publicacion del evento</small>
+                  <label for="" class="form-label">Preferencias</label>
+                  <textarea name="comentarios" rows="7" cols="55" id="descripcion"></textarea>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Fecha Evento</label>
-                  <input type="date" class="form-control" name="fechaEvento" id="fechaEvento" aria-describedby="helpId"
-                    placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha del evento</small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Hora</label>
-                  <input type="time" class="form-control" name="hora" id="hora" aria-describedby="helpId"
-                    placeholder="Hora del evento">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la hora del evento</small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group text-align-center">
-                  <textarea name="comentarios" rows="7" cols="50" id="descripcion">Descripcion del Evento</textarea>
-                </div>
-              </div>
-            </div>
+            
+          
             <div class="form-group form-check p-2" style="text-align: left;">
-              <button type="button" class="btn btn-primary" onclick="crearNuevoEv()">
-                Agregar
+              <button type="button" class="btn btn-primary" onclick="creaPreferencia()">
+                Agregar 
               </button>
             </div>
           </form>
@@ -142,10 +185,9 @@
     </div>
   </div>
 
-  <footer>
-    <div id="footer"></div>
 
-  </footer>
+
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -154,7 +196,7 @@
 
 
   <script src="js/menu.js "></script>
-  <script src="js/index.js "></script>
+  <script src="js/preferencia.js "></script>
 </body>
 
 </html>

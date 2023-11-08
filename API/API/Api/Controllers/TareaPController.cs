@@ -53,7 +53,7 @@ namespace Api.Controllers
             }
 
             var tareaP = _context.TareaPendiente
-                .FromSqlRaw("EXEC BuscarTareaPorID @CodigoTarea", new SqlParameter("codigoTarea", codigoTarea))
+                .FromSqlRaw("EXEC BuscarTareaPorID @CodigoTarea", new SqlParameter("CodigoTarea", codigoTarea))
                 .ToList();
 
             return Ok(tareaP);

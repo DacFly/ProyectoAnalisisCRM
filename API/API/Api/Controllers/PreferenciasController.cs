@@ -9,7 +9,7 @@ using System.Data;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("Cliente")]
+    [Route("Preferencia")]
     public class PreferenciasController : Controller
     {
         private readonly Context _context;
@@ -43,7 +43,23 @@ namespace Api.Controllers
 
             return Ok(preferencia);
         }
-        
+
+        [HttpGet]
+        [Route("PreferenciasPorNombre/{nombreBuscado}")]
+        public IActionResult GetClientesPorNombre(string nombreBuscado)
+        {
+            if (string.IsNullOrWhiteSpace(nombreBuscado))
+            {
+                return BadRequest("El nombre de cliente no puede estar vacío.");
+            }
+
+            var preferencia = _context.Preferencia
+                .FromSqlRaw("EXEC BuscarPreferenciasPorNombre @NombreBuscado", new SqlParameter("NombreBuscado", nombreBuscado))
+                .ToList();
+
+            return Ok(preferencia);
+        }
+
 
         // POST: api/Usuarios
         [HttpPost]

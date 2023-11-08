@@ -11,7 +11,7 @@ namespace Api.Modelo
         public int CodigoTarea { get; set; }
 
         public string NombreT { get; set; }
-        public string NombreCliente { get; set; }
+        public string NombreTrabajador { get; set; }
         public string Descripcion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaFinalizacion { get; set; }

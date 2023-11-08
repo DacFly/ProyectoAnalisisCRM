@@ -22,12 +22,12 @@ function cargarTareaP(){
                   <td>${tareaP.tareaId}</td>
                   <td>${tareaP.codigoTarea}</td>
                   <td>${tareaP.nombreT}</td>
-                  <td>${tareaP.nombreCliente}</td>
+                  <td>${tareaP.nombreTrabajador}</td>
                   <td>${tareaP.descripcion}</td>
                   <td>${tareaP.fechaCreacion}</td>
                   <td>${tareaP.fechaFinalizacion}</td>
                   <td>
-                    <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreCliente}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreTrabajador}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
                     <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.tareaId}')" role="button">Eliminar</a>
                   </td>
               </tr>`;
@@ -43,7 +43,7 @@ cargarTareaP();
 input.addEventListener("input", function () {
   if (input.value != "") {
     fetch(
-      "https://localhost:7203/TareaPendiente/BuscarTareaP/" + input.value,
+      "https://localhost:7203/TareaPendiente/TareaPorID/" + input.value,
       {
         method: "GET",
       }
@@ -58,12 +58,12 @@ input.addEventListener("input", function () {
           <td>${tareaP.tareaId}</td>
           <td>${tareaP.codigoTarea}</td>
           <td>${tareaP.nombreT}</td>
-          <td>${tareaP.nombreCliente}</td>
+          <td>${tareaP.nombreTrabajador}</td>
           <td>${tareaP.descripcion}</td>
           <td>${tareaP.fechaCreacion}</td>
           <td>${tareaP.fechaFinalizacion}</td>
           <td>
-            <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreCliente}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreTrabajador}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
             <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.tareaId}')" role="button">Eliminar</a>
           </td>
           </tr>`;
@@ -94,15 +94,17 @@ input.addEventListener("input", function () {
           contenidoTablaResultado.innerHTML += `
           <tr class="table-primary" >
           <td>${tareaP.tareaId}</td>
-          <td>${tareaP.clienteId}</td>
+          <td>${tareaP.codigoTarea}</td>
+          <td>${tareaP.nombreT}</td>
+          <td>${tareaP.nombreTrabajador}</td>
           <td>${tareaP.descripcion}</td>
           <td>${tareaP.fechaCreacion}</td>
           <td>${tareaP.fechaFinalizacion}</td>
           <td>
-            <a name="" id="" class="btn btn-info" onclick="editar(${sessionStorage.getItem("id")},'${tareaP.TareaId}', '${tareaP.ClienteId}', '${tareaP.Descripcion}', '${tareaP.FechaCreacion}', '${tareaP.FechaFinalizacion}')" role="button">Editar</a>
-            <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.TareaId}')" role="button">Eliminar</a>
+            <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreTrabajador}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.tareaId}')" role="button">Eliminar</a>
           </td>
-      </tr>`;
+          </tr>`;
         }
       })
       .catch((error) => {
@@ -128,7 +130,7 @@ function creaTareaP(){
   
   var codigoTarea = document.getElementById("codigoTarea").value;
   var nombreT = document.getElementById("nombreT").value;
-  var nombreCliente = document.getElementById('nombreCliente').value;
+  var nombreTrabajador = document.getElementById('nombreTrabajador').value;
   var descripcion = document.getElementById('descripcion').value;
   var fechaCreacion = document.getElementById('fechaCreacion').value;
   var fechaFinalizacion = document.getElementById('fechaFinalizacion').value;
@@ -138,7 +140,7 @@ function creaTareaP(){
     tareaId: 0,
     codigoTarea: codigoTarea,
     nombreT: nombreT,
-    nombreCliente: nombreCliente, 
+    nombreTrabajador: nombreTrabajador, 
     descripcion: descripcion,
     fechaCreacion: fechaCreacion,
     fechaFinalizacion: fechaFinalizacion
@@ -157,7 +159,7 @@ function creaTareaP(){
       document.getElementById('tareaId').value = '';
       document.getElementById('codigoTarea').value = '';
       document.getElementById('nombreT').value = '';
-      document.getElementById('nombreCliente').value = '';
+      document.getElementById('nombreTrabajador').value = '';
       document.getElementById('descripcion').value = '';
       document.getElementById('fechaCreacion').value = '';
       document.getElementById('fechaFinalizacion').value = '';
@@ -179,11 +181,11 @@ const modalEditar = new bootstrap.Modal(
 );
 var formulario = document.getElementById("frmEventos");
 
-function editar(tareaId,codigoTarea,nombreT,nombreCliente, descripcion, fechaCreacion, fechaFinalizacion) {
+function editar(tareaId,codigoTarea,nombreT,nombreTrabajador, descripcion, fechaCreacion, fechaFinalizacion) {
   document.getElementById("eTareaId").value = tareaId;
   document.getElementById("eCodigoTarea").value = codigoTarea ;
   document.getElementById("eNombreT").value = nombreT;
-  document.getElementById("eNombreCliente").value =nombreCliente ;
+  document.getElementById("eNombreTrabajador").value =nombreTrabajador ;
   document.getElementById("eDescripcion").value = descripcion;
   document.getElementById("eFechaCreacion").value = fechaCreacion;
   document.getElementById("eFechaFinalizacion").value = fechaFinalizacion;
@@ -196,7 +198,7 @@ formulario.addEventListener("submit", function (e) {
   var tareaId = document.getElementById("eTareaId").value;
   var codigoTarea = document.getElementById("eCodigoTarea").value;
   var nombreT = document.getElementById("eNombreT").value;
-  var nombreCliente = document.getElementById("eNombreCliente").value;
+  var nombreTrabajador = document.getElementById("eNombreTrabajador").value;
   var descripcion = document.getElementById("eDescripcion").value;
   var fechaCreacion = document.getElementById("eFechaCreacion").value;
   var fechaFinalizacion = document.getElementById("eFechaFinalizacion").value;
@@ -207,7 +209,7 @@ formulario.addEventListener("submit", function (e) {
     tareaId: tareaId,
     codigoTarea: codigoTarea,
     nombreT: nombreT,
-    nombreCliente: nombreCliente,
+    nombreTrabajador: nombreTrabajador,
     descripcion: descripcion,
     fechaCreacion: fechaCreacion,
     fechaFinalizacion: fechaFinalizacion
@@ -225,7 +227,7 @@ formulario.addEventListener("submit", function (e) {
         document.getElementById("tareaId").value = "";
         document.getElementById("codigoTarea").value = "" ;
         document.getElementById("nombreT").value = "";
-        document.getElementById("nombreCliente").value = "" ;
+        document.getElementById("nombreTrabajador").value = "" ;
         document.getElementById("descripcion").value = "";
         document.getElementById("fechaCreacion").value = "";
         document.getElementById("fechaFinalizacion").value = "";

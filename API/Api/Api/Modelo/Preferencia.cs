@@ -7,11 +7,9 @@ namespace Api.Modelo
         [Key]
         public int IdPreferencia { get; set; }
 
-        public string ClienteId { get; set; }
+        public int CodigoPreferencia { get; set; }
 
-        public string Nombre { get; set; }
-
-        public string nombreProducto { get; set; }
+        public string NombreCliente { get; set; }
 
         public string Descripcion { get; set; }
 

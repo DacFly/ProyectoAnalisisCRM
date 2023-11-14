@@ -1,47 +1,55 @@
 var contenido = document.querySelector("#menu");
 
 
-contenido.innerHTML += `<div class="container-fluid">
-<div class="row align-items-center">
-        <div class="site-logo col-6">
-        <a href="index.html"> <img src="images/logo.png" alt="Texto alternativo de la imagen" style="height: 100px;width: 140px">
-        </a>
-        </div>          
-        <nav class="mx-auto site-navigation">
-          <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-          <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
-          <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
-          <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
-          <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
-          <li><a href="index.html" class="nav-link ">Contacto</a></li>
-          <li><a href="Ventas.html" class="nav-link ">Ventas</a></li>
-          <li><a href="Producto.html" class="nav-link ">Productos</a></li>
-          </ul>
-        </nav>
-        <div class="right-cta-menu text-right d-flex aligin-items-center col-6">  
-        <div class="ml-auto">
-              <div class="dropdown ">
-                <nav class="mx-auto   site-navigation">
-                  <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                    <li class="has-children">
-                      <a href="#" class="div-drop">${sessionStorage.getItem("nombre")}</a>
-                      <ul class="dropdown">
-                        <li><a href="modificarPerfil.html">Modificar Perfil</a></li>
-                        <li><a  onclick = "eliminarP()">Eliminar Perfil</a></li>
-                        <li><a  onclick="singOut()">Cerrar Sesion</a></li>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div>
-              </div>
-          </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+contenido.innerHTML += `
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="site-logo col-6">
+      <a href="index.html"> <img src="images/logo.png" alt="Texto alternativo de la imagen" style="height: 100px;width: 140px">
+      </a>
+    </div>
+    <nav class="mx-auto site-navigation">
+      <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+        <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
+        <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
+        <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
+        <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
+        <li><a href="index.html" class="nav-link ">Contacto</a></li>
+        <li><a href="Ventas.html" class="nav-link ">Ventas</a></li>
+        <li><a href="Producto.html" class="nav-link ">Productos</a></li>
+      </ul>
+    </nav>
+    <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+      <div class="ml-auto">
+        <div class="dropdown ">
+          <nav class="mx-auto   site-navigation">
+            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+              <li class="has-children">
+                <a href="#" class="div-drop">${sessionStorage.getItem("nombre")}</a>
+                <ul class="dropdown">
+                  <li><a href="modificarPerfil.html">Modificar Perfil</a></li>
+                  <li><a onclick="eliminarP()">Eliminar Perfil</a></li>
+                  <li><a onclick="singOut()">Cerrar Sesion</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
         </div>
+        <div class="container-fluid">
+  <!-- ... tu código existente ... -->
+
+  <!-- Nuevo botón al final de todos los componentes -->
+  <div class="col-12 text-center">
+    <button type="button" class="btn btn-primary">Mi Botón</button>
+  </div>
 </div>
-</div>`;
+      </div>
+      <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+    </div>
+  </div >
+</div >
+
+`;
 
 
 
@@ -144,45 +152,3 @@ function eliminarP(idUsuario) {
 
 }
 
-
-<div class="container-fluid">
-  <div class="row align-items-center">
-    <div class="site-logo col-6">
-      <a href="index.html"> <img src="images/logo.png" alt="Texto alternativo de la imagen" style="height: 100px;width: 140px">
-      </a>
-    </div>
-    <nav class="mx-auto site-navigation">
-      <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-        <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
-        <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
-        <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
-        <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
-        <li><a href="index.html" class="nav-link ">Contacto</a></li>
-        <li><a href="Ventas.html" class="nav-link ">Ventas</a></li>
-        <li><a href="Producto.html" class="nav-link ">Productos</a></li>
-      </ul>
-    </nav>
-    <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-      <div class="ml-auto">
-        <div class="dropdown ">
-          <nav class="mx-auto   site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li class="has-children">
-                <a href="#" class="div-drop">${sessionStorage.getItem("nombre")}</a>
-                <ul class="dropdown">
-                  <li><a href="modificarPerfil.html">Modificar Perfil</a></li>
-                  <li><a onclick="eliminarP()">Eliminar Perfil</a></li>
-                  <li><a onclick="singOut()">Cerrar Sesion</a></li>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div>
-    </div>
-  </div>
-  <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-</div>
-</div >
-</div >

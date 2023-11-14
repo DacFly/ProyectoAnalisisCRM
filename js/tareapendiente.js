@@ -24,8 +24,8 @@ function cargarTareaP(){
                   <td>${tareaP.nombreT}</td>
                   <td>${tareaP.nombreTrabajador}</td>
                   <td>${tareaP.descripcion}</td>
-                  <td>${tareaP.fechaCreacion}</td>
-                  <td>${tareaP.fechaFinalizacion}</td>
+                  <td>${tareaP.fechaCreacion.split("T")[0]}</td>
+                  <td>${tareaP.fechaFinalizacion.split("T")[0]}</td>
                   <td>
                     <a name="" id="" class="btn btn-info" onclick="editar('${tareaP.tareaId}', '${tareaP.codigoTarea}','${tareaP.nombreT}', '${tareaP.nombreTrabajador}', '${tareaP.descripcion}', '${tareaP.fechaCreacion}', '${tareaP.fechaFinalizacion}')" role="button">Editar</a>
                     <a name="" id="" class="btn btn-danger" onclick="eliminar('${tareaP.tareaId}')" role="button">Eliminar</a>
@@ -187,8 +187,8 @@ function editar(tareaId,codigoTarea,nombreT,nombreTrabajador, descripcion, fecha
   document.getElementById("eNombreT").value = nombreT;
   document.getElementById("eNombreTrabajador").value =nombreTrabajador ;
   document.getElementById("eDescripcion").value = descripcion;
-  document.getElementById("eFechaCreacion").value = fechaCreacion;
-  document.getElementById("eFechaFinalizacion").value = fechaFinalizacion;
+  document.getElementById("eFechaCreacion").value = fechaCreacion.split("T")[0];
+  document.getElementById("eFechaFinalizacion").value = fechaFinalizacion.split("T")[0];
   modalEditar.show();
 }
 

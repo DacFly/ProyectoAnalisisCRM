@@ -54,18 +54,18 @@ input.addEventListener("input", function () {
         console.log(jsonClientes)
         for (const cliente of jsonClientes) {
           contenidoTablaResultado.innerHTML += `
-              <tr class="table-primary" >
-                  <td>${cliente.clienteId}</td>
-                  <td>${cliente.cedula}</td>
-                  <td>${cliente.nombre}</td>
-                  <td>${cliente.apellido}</td>
-                  <td>${cliente.correo}</td>
-                  <td>${cliente.telefono}</td>
-                  <td>
-                    <a name="" id="" class="btn btn-primary" onclick="editar(${sessionStorage.getItem("id")},'${cliente.ClienteId}', '${cliente.Cedula}', '${cliente.Nombre}', '${cliente.Apellido}', '${cliente.Correo}', '${cliente.Telefono}')" role="button">Edit</a>
-                    <a name="" id="" class="btn btn-danger" onclick="eliminar('${cliente.ClienteId}')" role="button">Elim</a>
-                  </td>
-              </tr>`;
+          <tr class="table-primary" >
+          <td>${cliente.clienteId}</td>
+          <td>${cliente.cedula}</td>
+          <td>${cliente.nombre}</td>
+          <td>${cliente.apellido}</td>
+          <td>${cliente.correo}</td>
+          <td>${cliente.telefono}</td>
+          <td>
+            <a name="" id="" class="btn btn-info" onclick="editar('${cliente.clienteId}','${cliente.cedula}', '${cliente.nombre}', '${cliente.apellido}', '${cliente.correo}', '${cliente.telefono}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-danger" onclick="eliminar('${cliente.clienteId}')" role="button">Eliminar</a>
+          </td>
+      </tr>`;
         }
       })
       .catch((error) => {

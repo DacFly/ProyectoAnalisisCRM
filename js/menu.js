@@ -10,6 +10,7 @@ contenido.innerHTML += `<div class="container-fluid">
         <nav class="mx-auto site-navigation">
           <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
           <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
+          <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
           <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
           <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
           <li><a href="index.html" class="nav-link ">Contacto</a></li>
@@ -17,9 +18,8 @@ contenido.innerHTML += `<div class="container-fluid">
           <li><a href="Producto.html" class="nav-link ">Productos</a></li>
           </ul>
         </nav>
-        
-        <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-          <div class="ml-auto">
+        <div class="right-cta-menu text-right d-flex aligin-items-center col-6">  
+        <div class="ml-auto">
               <div class="dropdown ">
                 <nav class="mx-auto   site-navigation">
                   <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -90,18 +90,17 @@ function crearNuevoEv() {
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(nuevoEvento)
   }).then(response => {
-    if(response.status==201)
-    {
-    swal("¡Evento creado!", "El evento ha sido creado exitosamente.", "success");
-    cargarEventos()
-    cerrarModalCrearEvento()
-    document.getElementById('evento').value = '';
-    document.getElementById('fechaPublicacion').value = '';
-    document.getElementById('fechaEvento').value = '';
-    document.getElementById('hora').value = '';
-    document.getElementById('descripcion').value = 'Ingrese descripcion';
-    document.getElementById('direccion').value = '';
-    }else{swal("Error", "Ocurrió un error al crear el evento. Por favor, inténtalo nuevamente.", "error")}
+    if (response.status == 201) {
+      swal("¡Evento creado!", "El evento ha sido creado exitosamente.", "success");
+      cargarEventos()
+      cerrarModalCrearEvento()
+      document.getElementById('evento').value = '';
+      document.getElementById('fechaPublicacion').value = '';
+      document.getElementById('fechaEvento').value = '';
+      document.getElementById('hora').value = '';
+      document.getElementById('descripcion').value = 'Ingrese descripcion';
+      document.getElementById('direccion').value = '';
+    } else { swal("Error", "Ocurrió un error al crear el evento. Por favor, inténtalo nuevamente.", "error") }
   })
     .catch(console.log);
 }
@@ -119,28 +118,71 @@ function eliminarP(idUsuario) {
       console.log(idUsuario);
       var idUsuario = parseInt(sessionStorage.getItem("id"));
       fetch(
-        "https://localhost:7088/Usuario/BorrarUsuario/" +idUsuario,
+        "https://localhost:7088/Usuario/BorrarUsuario/" + idUsuario,
         {
           method: "DELETE"
-          
+
         }
       ) //url de peticion de datos
-        .then(datosrepuesta => { 
-          if(datosrepuesta.status == 204){
+        .then(datosrepuesta => {
+          if (datosrepuesta.status == 204) {
             swal("Eliminado correctamente", {
               icon: "success",
             });
             singOut()
-          }else{
+          } else {
             swal("No se borraron los datos");
           }
         })
         .catch(console.log); //muestra errores
       //Muestra el resultado de la peticion
-    } 
+    }
   });
   var datosenviar = {
     idUsuario: idUsuario,
   };
 
 }
+
+
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="site-logo col-6">
+      <a href="index.html"> <img src="images/logo.png" alt="Texto alternativo de la imagen" style="height: 100px;width: 140px">
+      </a>
+    </div>
+    <nav class="mx-auto site-navigation">
+      <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+        <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
+        <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
+        <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
+        <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
+        <li><a href="index.html" class="nav-link ">Contacto</a></li>
+        <li><a href="Ventas.html" class="nav-link ">Ventas</a></li>
+        <li><a href="Producto.html" class="nav-link ">Productos</a></li>
+      </ul>
+    </nav>
+    <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+      <div class="ml-auto">
+        <div class="dropdown ">
+          <nav class="mx-auto   site-navigation">
+            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+              <li class="has-children">
+                <a href="#" class="div-drop">${sessionStorage.getItem("nombre")}</a>
+                <ul class="dropdown">
+                  <li><a href="modificarPerfil.html">Modificar Perfil</a></li>
+                  <li><a onclick="eliminarP()">Eliminar Perfil</a></li>
+                  <li><a onclick="singOut()">Cerrar Sesion</a></li>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+    </div>
+  </div>
+  <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+</div>
+</div >
+</div >

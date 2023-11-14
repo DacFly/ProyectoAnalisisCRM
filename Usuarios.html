@@ -28,13 +28,11 @@
     </div>
     <div class="site-mobile-menu-body"></div>
   </div> <!-- .site-mobile-menu -->
-
   <!-- NAVBAR -->
   <header class="site-navbar mt-3" id="menu">
 
   </header>
-
-
+  <!--Color de fondo-->
   <div class="hero" style="background-color:#114C5F; height: 200px;"></div>
 
   <div class="container">
@@ -43,7 +41,7 @@
       <table class="table table-striped table-hover table-borderless table-success align-middle">
         <div class="row">
           <div class="col-6"> <!-- Primera columna con mitad del ancho (6 de 12 columnas) -->
-            <h2>Preferencias del Cliente</h2>
+            <h2>Usuarios</h2>
           </div>
           <div class="col-6 text-right"> <!-- Segunda columna con mitad del ancho (6 de 12 columnas) y alineación a la derecha -->
             <div class="row">
@@ -52,8 +50,8 @@
                </div>
                <div class="col-6">
                 <input type="text" class="form-control" name="evento" id="inputNombre" aria-describedby="helpId"
-                  placeholder="Buscar Cliente">
-                  <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearPreferencia()" role="button">Agregar Preferencia</a>  
+                  placeholder="Buscar Usuario ROL">
+                  <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearUsuario()" role="button">Agregar Usuario</a>  
                </div>
             </div>
             
@@ -62,10 +60,11 @@
         <thead class="table-light">
           <caption></caption>
           <tr>
-            <th>Id Preferencia</th>
-            <th>Código Preferencia</th>
-            <th>Nombre Cliente</th>
-            <th>Preferencias</th>
+            <th>Id Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Contraseña</th>
+            <th>Rol</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -75,35 +74,24 @@
     </div>
   </div>
 
-  <div class="modal " id="modalEditarPreferencia" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false"
+  <div class="modal " id="modalEditarUsuario" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false"
     role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Modificar Preferencias del cliente</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalModificarPreferencia()" style="background-color: transparent; border: 0;">X</button>
+          <h5 class="modal-title" id="modalTitleId"> Modificar Usuario</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalModificarUsuario()" style="background-color: transparent; border: 0;">X</button>
         </div>
         <div class="modal-body" style="width: auto;">
-
           <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="eIdPreferencia" required hidden>
+            <input type="text" class="form-control" id="eUsuarioId" required hidden>
             
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Código de la preferencia</label>
-                  <input type="text" class="form-control" name="" id="eCodigoPreferencia" aria-describedby="helpId"
-                    placeholder="Código de la preferencia">
-                  <small id="helpId" class="form-text text-muted"></small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Nombre del cliente</label>
-                  <input type="text" class="form-control" name="" id="eNombreCliente"
-                    aria-describedby="helpId" placeholder="Nombre del cliente">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" id="eNombre"
+                    aria-describedby="helpId" placeholder="Nombre del usuario">
                   <small id="helpId" class="form-text text-muted"> </small>
                 </div>
               </div>
@@ -111,12 +99,33 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Preferencias</label>
-                  <textarea name="comentarios" rows="7" cols="55" id="eDescripcion"></textarea>
+                  <label for="" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" name="apellido" id="eApellido" aria-describedby="helpId"
+                    placeholder="Apellido del usuario">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
-            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Contraseña</label>
+                  <input type="text" class="form-control" name="" id="eContrasena" aria-describedby="helpId"
+                    placeholder="">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Rol</label>
+                  <input type="text" class="form-control" name="" id="eRol" aria-describedby="helpId"
+                    placeholder="Rol del usuario">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
             <div class="form-group form-check p-2" style="text-align: left;">
               <button type="submit" class="btn btn-primary">
                 Actualizar
@@ -128,27 +137,41 @@
     </div>
   </div>
 
-  <div class="modal " id="modalCrearPreferencia" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+
+  <div class="modal " id="modalCrearUsuario" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
     aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+      
       <div class="modal-content">
+
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Agregar Preferencia del Cliente</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearPreferencia()"
+          <h5 class="modal-title" id="modalTitleId"> Agregar Usuario</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearUsuario()"
             style="background-color: transparent; border: 0;">X</button>
         </div>
 
         <div class="modal-body" style="width: auto;">
 
           <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="idPreferencia" required hidden>
+            <input type="text" class="form-control" id="usuarioId" required hidden>
 
+          
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Código de la Preferencia</label>
-                  <input type="text" class="form-control" name="evento" id="codigoPreferencia" aria-describedby="helpId"
-                    placeholder="Ingrese el código de la preferencia">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                    placeholder="Nombre del usuario">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido"
+                    aria-describedby="helpId" placeholder="Apellidos del usuario">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
@@ -156,35 +179,37 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Nombre Cliente</label>
-                  <input type="text" class="form-control" name="evento" id="nombreCliente" aria-describedby="helpId"
-                    placeholder="Ingrese el nombre del cliente">
-                  <small id="helpId" class="form-text text-muted">  </small>
+                  <label for="" class="form-label">Contraseña</label>
+                  <input type="text" class="form-control" name="" id="contrasena" aria-describedby="helpId"
+                    placeholder="Contraseña del usuario">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="" class="form-label">Preferencias</label>
-                  <textarea name="comentarios" rows="7" cols="55" id="descripcion"></textarea>
+                  <label for="" class="form-label">Rol</label>
+                  <input type="text" class="form-control" name="" id="rol" aria-describedby="helpId"
+                    placeholder="Rol del usuario">
+                  <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
-            
-          
+
             <div class="form-group form-check p-2" style="text-align: left;">
-              <button type="button" class="btn btn-primary" onclick="creaPreferencia()">
-                Agregar 
+              <button type="button" class="btn btn-primary" onclick="creaUsuario()">
+                Agregar Usuario
               </button>
             </div>
           </form>
+
         </div>
 
       </div>
+
     </div>
   </div>
-
 
 
 
@@ -196,8 +221,7 @@
 
 
   <script src="js/menu.js "></script>
-  <script src="js/preferencia.js "></script>
+  <script src="js/usuario.js "></script>
+
 </body>
-
 </html>
-

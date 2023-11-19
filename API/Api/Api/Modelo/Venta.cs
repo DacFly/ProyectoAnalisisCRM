@@ -11,7 +11,7 @@ namespace Api.Modelo
 
         public string Cedula { get; set; }
 
-        public int Subtotal { get; set; }
+        public int SubTotal { get; set; }
 
         public int IVA { get; set; }
 
@@ -20,3 +20,4 @@ namespace Api.Modelo
         public string FechaVenta { get; set; }
     }
 }
+

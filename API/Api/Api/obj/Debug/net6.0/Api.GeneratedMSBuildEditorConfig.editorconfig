@@ -17,3 +17,27 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\fabri\OneDrive\Documents\ProyectoAnalisisCRM\API\API\Api
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/fabri/OneDrive/Documents/ProyectoAnalisisCRM/API/API/Api/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabri/OneDrive/Documents/ProyectoAnalisisCRM/API/API/Api/Views/Venta/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabri/OneDrive/Documents/ProyectoAnalisisCRM/API/API/Api/Views/Venta/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabri/OneDrive/Documents/ProyectoAnalisisCRM/API/API/Api/Views/Venta/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabri/OneDrive/Documents/ProyectoAnalisisCRM/API/API/Api/Views/Venta/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fabri/OneDrive/Documents/ProyectoAnalisisCRM/API/API/Api/Views/Venta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

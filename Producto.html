@@ -65,6 +65,7 @@
             <th>Nombre del Producto</th>
             <th>Descripción del Producto</th>
             <th>Precio</th>
+            <th>Cantidad</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -126,6 +127,18 @@
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Cantidad</label>
+                  <input type="text" class="form-control" name="" id="eCantidadProducto" aria-describedby="helpId"
+                    placeholder="Cantidad del Producto">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+
             <div class="form-group form-check p-2" style="text-align: left;">
               <button type="submit" class="btn btn-primary">
                 Actualizar
@@ -138,20 +151,16 @@
   </div>
 
 
-  <div class="modal " id="modalCrearProducto" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-    aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal " id="modalCrearProducto" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       
       <div class="modal-content">
-
         <div class="modal-header">
           <h5 class="modal-title" id="modalTitleId"> Agregar Producto</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearProducto()"
-            style="background-color: transparent; border: 0;">X</button>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearProducto()" style="background-color: transparent; border: 0;">X</button>
         </div>
 
         <div class="modal-body" style="width: auto;">
-
           <form class="m-needs-validation" novalidate id="frmEventos">
             <input type="text" class="form-control" id="productoId" required hidden>
 
@@ -159,22 +168,22 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Código del Producto</label>
-                  <input type="text" class="form-control" name="" id="codProducto" aria-describedby="helpId"
-                    placeholder="Código del producto">
+                  <input type="text" class="form-control" name="" id="codProducto" aria-describedby="helpId" placeholder="Código del producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Nombre del Producto</label>
-                  <input type="text" class="form-control" name="nombre" id="nombreProducto" aria-describedby="helpId"
-                    placeholder="Nombre del producto">
+                  <input type="text" class="form-control" name="nombre" id="nombreProducto" aria-describedby="helpId" placeholder="Nombre del producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
-            </div> 
+            </div>
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -183,13 +192,22 @@
                 </div>
               </div>
             </div>
-           
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="" class="form-label">Precio del producto</label>
-                  <input type="text" class="form-control" name="telefono" id="precioProducto" aria-describedby="helpId"
-                    placeholder="Precio del Producto">
+                  <input type="text" class="form-control" name="telefono" id="precioProducto" aria-describedby="helpId" placeholder="Precio del Producto">
+                  <small id="helpId" class="form-text text-muted"></small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="" class="form-label">Cantidad del Producto</label>
+                  <input type="text" class="form-control" name="cantidad" id="cantidadProducto" aria-describedby="helpId" placeholder="Cantidad del Producto">
                   <small id="helpId" class="form-text text-muted"></small>
                 </div>
               </div>
@@ -201,13 +219,11 @@
               </button>
             </div>
           </form>
-
         </div>
-
       </div>
-
     </div>
-  </div>
+</div>
+
 
 
 

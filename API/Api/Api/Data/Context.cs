@@ -3,11 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace APIGestion.Data
 {
-    public class Context :DbContext
+    public class Context : DbContext
     {
-        public Context (DbContextOptions<Context> options) : base(options)
+        public Context(DbContextOptions<Context> options) : base(options)
         {
         }
+
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<DetalleVenta> DetalleVenta { get; set; }
         public DbSet<Preferencia> Preferencia { get; set; }
@@ -16,6 +17,10 @@ namespace APIGestion.Data
         public DbSet<Venta> Venta { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DetalleVenta>()
+                .HasNoKey();
+        }
     }
 }

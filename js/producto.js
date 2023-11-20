@@ -25,8 +25,9 @@ function cargarProductos(){
                   <td>${producto.nombreProducto}</td>
                   <td>${producto.descripcionProducto}</td>
                   <td>${producto.precioProducto}</td>
+                  <td>${producto.cantidad}</td>
                   <td>
-                    <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.nombreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}')" role="button">Editar</a>
+                    <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.nombreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}','${producto.cantidad}')" role="button">Editar</a>
                     <a name="" id="" class="btn btn-danger" onclick="eliminar('${producto.productoId}')" role="button">Eliminar</a>
                   </td>
               </tr>`;
@@ -59,8 +60,9 @@ input.addEventListener("input", function () {
           <td>${producto.nombreProducto}</td>
           <td>${producto.descripcionProducto}</td>
           <td>${producto.precioProducto}</td>
+          <td>${producto.cantidad}</td>
           <td>
-            <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.combreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}')" role="button">Editar</a>
+            <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.combreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}','${producto.cantidad}')" role="button">Editar</a>
             <a name="" id="" class="btn btn-danger" onclick="eliminar('${producto.productoId}')" role="button">Eliminar</a>
           </td>
       </tr>`;
@@ -82,47 +84,53 @@ function cerrarModalCrearProducto() {
 }
 
 
-function creaProducto(){
-  //captura los datos de la interfaz 
+function creaProducto() {
+  // Captura los datos de la interfaz
   var codProducto = document.getElementById('codProducto').value;
   var nombreProducto = document.getElementById('nombreProducto').value;
   var descripcionProducto = document.getElementById('descripcionProducto').value;
   var precioProducto = document.getElementById('precioProducto').value;
-  
+  var cantidad = document.getElementById('cantidadProducto').value;
 
-  //jsopn para la solicitud 
+
+  // JSON para la solicitud
   var producto = {
-    productoId: 0, // Cambiar el valor del usuarioId según corresponda
+    productoId: 0,
     codProducto: codProducto,
     nombreProducto: nombreProducto,
     descripcionProducto: descripcionProducto,
-    precioProducto: precioProducto
+    precioProducto: precioProducto,
+    cantidad: cantidad
   };
 
   console.log(producto);
-  // Realizar la solicitud POST a la API para crear el evento
+
+  // Realizar la solicitud POST a la API para crear el producto
   fetch('https://localhost:7203/Producto/CrearProducto', {
-    
     method: "POST",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(producto)
-  }).then(response => {
-    if(response.status==201)
-    {
-    swal("¡Producto Agregado!", "El producto se ha agregado correctamente.", "success");
-    cargarProductos();
+  })
+  .then(response => {
+    if (response.status === 201) {
+      swal("¡Producto Agregado!", "El producto se ha agregado correctamente.", "success");
+      cargarProductos();
       document.getElementById('codProducto').value = '';
       document.getElementById('nombreProducto').value = '';
       document.getElementById('descripcionProducto').value = '';
       document.getElementById('precioProducto').value = '';
-      cerrarModalCrearProducto()
-    }else{swal("Error", "Ocurrió un error al agregar el producto. Por favor, inténtalo nuevamente.", "error")}
+      document.getElementById('cantidad').value = '';
+      cerrarModalCrearProducto();
+    } else {
+      swal("Error", "Ocurrió un error al agregar el producto. Por favor, inténtalo nuevamente.", "error");
+    }
   })
-    .catch(console.log);
+  .catch(console.log);
 }
 
 
-//EDITAR CLIENTE
+
+
 
 function cerrarModalModificarProducto(){
   modalEditar.hide();
@@ -133,14 +141,16 @@ const modalEditar = new bootstrap.Modal(
 );
 var formulario = document.getElementById("frmEventos");
 
-function editar(productoId,codProducto, nombreProducto, descripcionProducto,precioProducto) {
+function editar(productoId, codProducto, nombreProducto, descripcionProducto, precioProducto, cantidad) {
   document.getElementById("eProductoId").value = productoId;
   document.getElementById("eCodProducto").value = codProducto;
   document.getElementById("eNombreProducto").value = nombreProducto;
   document.getElementById("eDescripcionProducto").value = descripcionProducto;
   document.getElementById("ePrecioProducto").value = precioProducto;
+  document.getElementById("eCantidadProducto").value = cantidad; 
   modalEditar.show();
 }
+
 
 formulario.addEventListener("submit", function (e) { 
   e.preventDefault();
@@ -150,51 +160,50 @@ formulario.addEventListener("submit", function (e) {
   var nombreProducto = document.getElementById("eNombreProducto").value;
   var descripcionProducto = document.getElementById("eDescripcionProducto").value;
   var precioProducto = document.getElementById("ePrecioProducto").value;
-
-  
+  var cantidadProducto = document.getElementById("eCantidadProducto").value; // Agrega esta línea para obtener la cantidad
 
   var datosenviar = {
     productoId: productoId,
     codProducto: codProducto,
     nombreProducto: nombreProducto,
     descripcionProducto: descripcionProducto,
-    precioProducto: precioProducto
-
+    precioProducto: precioProducto,
+    cantidad: cantidadProducto // Agrega esta línea para incluir la cantidad en el objeto
   };
   console.log(datosenviar);
   fetch("https://localhost:7203/Producto/EditarProducto", {
     method: "PUT",
     headers: { "content-type": "application/json " },
     body: JSON.stringify(datosenviar),
-  }) //url de peticion de datos
-    .then((respuesta) => {
-      console.log(respuesta.status);
-      if (respuesta.status == 204) {
-        document.getElementById("codProducto").value = "";
-        document.getElementById("nombreProducto").value = "";
-        document.getElementById("descripcionProducto").value = "";
-        document.getElementById("precioProducto").value = "";
-
-        
-        swal(
-          "Se ha modificado correctamente!",
-          "Presiona el boton!",
-          "success"
-        )
-        .then((willDelete) => {
-          if (willDelete) {
-      
-            modalEditar.hide();
-            cargarProductos();
-          } 
-        });
-      }
-      else{
-        swal("No se ha modificado!", "Presiona el boton!", "error")
-      }
-    })
-    .catch(console.log); //muestra errores
+  })
+  .then((respuesta) => {
+    console.log(respuesta.status);
+    if (respuesta.status == 204) {
+      document.getElementById("codProducto").value = "";
+      document.getElementById("nombreProducto").value = "";
+      document.getElementById("descripcionProducto").value = "";
+      document.getElementById("precioProducto").value = "";
+      document.getElementById("cantidadProducto").value = ""; // Agrega esta línea para limpiar la cantidad
+          
+      swal(
+        "Se ha modificado correctamente!",
+        "Presiona el botón!",
+        "success"
+      )
+      .then((willDelete) => {
+        if (willDelete) {
+          modalEditar.hide();
+          cargarProductos();
+        } 
+      });
+    }
+    else{
+      swal("No se ha modificado!", "Presiona el botón!", "error")
+    }
+  })
+  .catch(console.log);
 });
+
 
 
 //eliminar
@@ -236,3 +245,4 @@ function eliminar(productoId) {
     productoId: productoId,
   };
 }
+

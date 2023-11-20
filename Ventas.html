@@ -92,74 +92,78 @@
   
     <div class="modal-body" style="width: auto;">
       <form class="m-needs-validation" novalidate id="frmVenta">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre del cliente" required>
-              <small class="form-text text-muted"></small>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="cedula">Cédula</label>
-              <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Cédula del cliente" required>
-              <small class="form-text text-muted"></small>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="producto">Producto</label>
-              <select class="form-control" name="producto" id="producto" onchange="seleccionarProducto()">
-                <option value="">Selecciona un producto</option>
-                <option value="producto1">Producto 1</option>
-                <option value="producto2">Producto 2</option>
-                <option value="producto3">Producto 3</option>
-                <!-- Agrega más opciones de productos según tus necesidades -->
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="subTotal">SubTotal</label>
-              <input type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal" required>
-              <small class="form-text text-muted"></small>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="iva">IVA</label>
-              <input type="number" class="form-control" name="iva" id="iva" placeholder="IVA" required>
-              <small class="form-text text-muted"></small>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="montoTotal">Monto Total</label>
-              <input type="number" class="form-control" name="montoTotal" id="montoTotal" placeholder="Monto Total" required>
-              <small class="form-text text-muted"></small>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="fechaVenta">Fecha de Venta</label>
-              <input type="text" class="form-control" name="fechaVenta" id="fechaVenta" placeholder="Fecha de Venta" required>
-              <small class="form-text text-muted"></small>
-            </div>
-          </div>
-        </div>
+       <!-- Campo de cliente -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <select id="selectCliente" name="cliente" class="form-control">
+      <option value="">Selecciona un cliente</option>
+      @foreach (var cliente in Model.Clientes)
+      {
+        <option value="@cliente.Id">@cliente.Nombre</option>
+      }
+    </select>
+    <small class="form-text text-muted"></small>
+  </div>
+</div>
+
+<!-- Campo de cédula -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="cedula">Cédula</label>
+    <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Cédula del cliente" readonly required>
+    <small class="form-text text-muted"></small>
+  </div>
+</div>
+
+<!-- Campo de producto -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="producto">Producto</label>
+    <select class="form-control" name="producto" id="producto" onchange="seleccionarProducto()" required>
+      <option value="">Selecciona un producto</option>
+      @foreach (var producto in Model.Productos)
+      {
+        <option value="@producto.Id">@producto.Nombre</option>
+      }
+    </select>
+  </div>
+</div>
+
+<!-- Campo de SubTotal -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="subTotal">SubTotal</label>
+    <input type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal" readonly required>
+    <small class="form-text text-muted"></small>
+  </div>
+</div>
+
+<!-- Campo de IVA -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="iva">IVA</label>
+    <input type="number" class="form-control" name="iva" id="iva" placeholder="IVA" readonly required>
+    <small class="form-text text-muted"></small>
+  </div>
+</div>
+
+<!-- Campo de Monto Total -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="montoTotal">Monto Total</label>
+    <input type="number" class="form-control" name="montoTotal" id="montoTotal" placeholder="Monto Total" readonly required>
+    <small class="form-text text-muted"></small>
+  </div>
+</div>
+       <!-- Campo de fecha de venta -->
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="fechaVenta">Fecha de Venta</label>
+    <input type="text" class="form-control" name="fechaVenta" id="fechaVenta" placeholder="Fecha de Venta" readonly required>
+    <small class="form-text text-muted"></small>
+  </div>
+</div>
   
         <div class="form-group form-check p-2" style="text-align: left;">
           <button type="button" class="btn btn-primary" onclick="crearVenta()">

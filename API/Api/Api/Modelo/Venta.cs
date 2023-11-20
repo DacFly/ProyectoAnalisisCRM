@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Api.Modelo
 {
@@ -7,21 +9,23 @@ namespace Api.Modelo
         [Key]
         public int CodFactura { get; set; }
 
-        public string Nombre { get; set; }
+        [Required]
+        public string NombreCliente { get; set; }
 
-        public string Cedula { get; set; }
+        [Required]
+        public string CedulaCliente { get; set; }
 
-        public string NombreProducto { get; set; }
+        [Required]
+        public decimal SubTotal { get; set; }
 
-        public int CodProducto { get; set; }
+        [Required]
+        public decimal IVA { get; set; }
 
-        public int SubTotal { get; set; }
+        [Required]
+        public decimal MontoTotal { get; set; }
 
-        public int IVA { get; set; }
+        [Required]
+        public DateTime FechaVenta { get; set; }
 
-        public int MontoTotal { get; set; }
-
-        public string FechaVenta { get; set; }
     }
 }
-

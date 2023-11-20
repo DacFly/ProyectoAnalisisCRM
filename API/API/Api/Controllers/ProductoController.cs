@@ -119,5 +119,19 @@ namespace Api.Controllers
         {
             return _context.Producto.Any(u => u.CodProducto == id);
         }
+
+        [HttpGet]
+        [Route("ObtenerProductoPorId/{id}")]
+        public async Task<ActionResult<Producto>> ObtenerProductoPorId(int id)
+        {
+            var producto = await _context.Producto.FindAsync(id);
+
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(producto);
+        }   
     }
 }

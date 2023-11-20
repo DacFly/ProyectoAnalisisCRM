@@ -18,12 +18,14 @@ function cargarVentas() {
               <td>${venta.codFactura}</td>
               <td>${venta.nombre}</td>
               <td>${venta.cedula}</td>
+              <td>${venta.NombreProducto}</td>
+              <td>${venta.CodProducto}</td>
               <td>${venta.subTotal}</td>
               <td>${venta.iva}</td>
               <td>${venta.montoTotal}</td>
               <td>${venta.fechaVenta}</td>
               <td>
-                <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombre}', '${venta.cedula}', ${venta.subTotal}, ${venta.iva}, ${venta.montoTotal}, '${venta.fechaVenta}')" role="button">Editar</a>
+                <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombre}','${venta.NombreProducto}','${venta.CodProducto}', '${venta.cedula}', ${venta.subTotal}, ${venta.iva}, ${venta.montoTotal}, '${venta.fechaVenta}')" role="button">Editar</a>
                 <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
               </td>
             </tr>`;
@@ -53,12 +55,14 @@ input.addEventListener("input", function () {
                 <td>${venta.codFactura}</td>
                 <td>${venta.nombre}</td>
                 <td>${venta.cedula}</td>
+                <td>${venta.NombreProducto}</td>
+                <td>${venta.CodProducto}</td>
                 <td>${venta.subTotal}</td>
                 <td>${venta.iva}</td>
                 <td>${venta.montoTotal}</td>
                 <td>${venta.fechaVenta}</td>
                 <td>
-                  <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombre}', '${venta.cedula}', ${venta.subTotal}, ${venta.iva}, ${venta.montoTotal}, '${venta.fechaVenta}')" role="button">Editar</a>
+                  <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombre}', '${venta.cedula}','${venta.NombreProducto}','${venta.CodProducto}', ${venta.subTotal}, ${venta.iva}, ${venta.montoTotal}, '${venta.fechaVenta}')" role="button">Editar</a>
                   <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
                 </td>
               </tr>`;

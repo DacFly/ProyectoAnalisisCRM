@@ -11,6 +11,10 @@ namespace Api.Modelo
 
         public string Cedula { get; set; }
 
+        public string NombreProducto { get; set; }
+
+        public int CodProducto { get; set; }
+
         public int SubTotal { get; set; }
 
         public int IVA { get; set; }

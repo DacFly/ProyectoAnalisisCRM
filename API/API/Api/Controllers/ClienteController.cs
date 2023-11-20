@@ -89,6 +89,9 @@ namespace Api.Controllers
                 }
                 else
                 {
+
+                }
+                {
                     throw;
                 }
             }

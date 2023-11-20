@@ -25,7 +25,10 @@ namespace Api.Controllers
         [Route("listaVentas")]
         public async Task<ActionResult<IEnumerable<Venta>>> GetVentas()
         {
-            var ventas = await _context.Venta.ToListAsync();
+            var ventas = await _context.Venta
+                .Include(v => v.Cliente)
+                .Include(v => v.Producto)
+                .ToListAsync();
             return Ok(ventas);
         }
 
@@ -34,7 +37,10 @@ namespace Api.Controllers
         [Route("BuscarVenta/{id}")]
         public async Task<ActionResult<Venta>> GetVenta(int id)
         {
-            var venta = await _context.Venta.FindAsync(id);
+            var venta = await _context.Venta
+                .Include(v => v.Cliente)
+                .Include(v => v.Producto)
+                .FirstOrDefaultAsync(v => v.CodFactura == id);
 
             if (venta == null)
             {
@@ -44,12 +50,14 @@ namespace Api.Controllers
             return Ok(venta);
         }
 
-
         [HttpGet]
         [Route("BuscarVentaPorCodFactura/{codFactura}")]
         public IActionResult GetVentaPorCodFactura(int codFactura)
         {
-            var venta = _context.Venta.FirstOrDefault(v => v.CodFactura == codFactura);
+            var venta = _context.Venta
+                .Include(v => v.Cliente)
+                .Include(v => v.Producto)
+                .FirstOrDefault(v => v.CodFactura == codFactura);
 
             if (venta == null)
             {
@@ -116,5 +124,53 @@ namespace Api.Controllers
         {
             return _context.Venta.Any(v => v.CodFactura == id);
         }
+
+        [HttpGet]
+        [Route("ListaClientes")]
+        public IActionResult GetListaClientes()
+        {
+            var clientes = _context.Cliente.ToList();
+            return Ok(clientes);
+        }
+
+        [HttpGet]
+        [Route("ListaClientes/{id}")]
+        public IActionResult GetClientePorId(int id)
+        {
+            var cliente = _context.Cliente.FirstOrDefault(c => c.ClienteId == id);
+
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cliente);
+        }
+
+        [HttpGet]
+        [Route("ListaProductos")]
+        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
+        {
+            var productos = await _context.Producto.ToListAsync();
+            return Ok(productos);
+        }
+
+        [HttpGet]
+        [Route("ListaProductos/{id}")]
+        public IActionResult GetProductoPorId(int id)
+        {
+            var producto = _context.Producto.FirstOrDefault(p => p.ProductoId == id);
+
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            // Devolver el producto con el precio y la cantidad
+            return Ok(new { PrecioProducto = producto.PrecioProducto, Cantidad = producto.Cantidad });
+        }
+
+
+
     }
 }

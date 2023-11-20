@@ -45,28 +45,30 @@
           <div class="col-6"> <!-- Primera columna con mitad del ancho (6 de 12 columnas) -->
             <h2>Ventas</h2>
           </div>
-          <div class="col-6 text-right"> <!-- Segunda columna con mitad del ancho (6 de 12 columnas) y alineación a la derecha -->
+          <div class="col-6 text-right">
+            <!-- Segunda columna con mitad del ancho (6 de 12 columnas) y alineación a la derecha -->
             <div class="row">
-               <div class="col-6">
+              <div class="col-6">
 
-               </div>
-               <div class="col-6">
+              </div>
+              <div class="col-6">
                 <input type="text" class="form-control" name="evento" id="inputCodFactura" aria-describedby="helpId"
                   placeholder="Buscar Venta">
-                  <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearVenta ()" role="button">Agregar Venta</a>  
-               </div>
+                <a name="" id="" class="btn btn-info" onclick="mostrarModalCrearVenta ()" role="button">Agregar
+                  Venta</a>
+              </div>
             </div>
-            
+
           </div>
         </div>
         <thead class="table-light">
           <caption></caption>
           <tr>
             <th>Cod Factura</th>
-            <th>Nombre</th>
+            <th>Nombre Cliente</th>
             <th>Cedula</th>
             <th>Nombre Producto</th>
-            <th>Codigo Producto</th>
+            <th>Cantidad</th>
             <th>Subtotal</th>
             <th>IVA</th>
             <th>Monto total</th>
@@ -78,123 +80,135 @@
       </table>
     </div>
   </div>
- <!-- aaa -->
- <div class="modal " id="modalCrearVenta" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
- aria-labelledby="modalTitleId" aria-hidden="true">
- <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-   
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="modalTitleId">Agregar Venta</h5>
-      <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearVenta()"
-        style="background-color: transparent; border: 0;">X</button>
-    </div>
-  
-    <div class="modal-body" style="width: auto;">
-      <form class="m-needs-validation" novalidate id="frmVenta">
-       <!-- Campo de cliente -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <select id="selectCliente" name="cliente" class="form-control">
-      <option value="">Selecciona un cliente</option>
-      @foreach (var cliente in Model.Clientes)
-      {
-        <option value="@cliente.Id">@cliente.Nombre</option>
-      }
-    </select>
-    <small class="form-text text-muted"></small>
-  </div>
-</div>
+  <!-- aaa -->
+  <div class="modal " id="modalCrearVenta" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+    aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
 
-<!-- Campo de cédula -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="cedula">Cédula</label>
-    <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Cédula del cliente" readonly required>
-    <small class="form-text text-muted"></small>
-  </div>
-</div>
-
-<!-- Campo de producto -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="producto">Producto</label>
-    <select class="form-control" name="producto" id="producto" onchange="seleccionarProducto()" required>
-      <option value="">Selecciona un producto</option>
-      @foreach (var producto in Model.Productos)
-      {
-        <option value="@producto.Id">@producto.Nombre</option>
-      }
-    </select>
-  </div>
-</div>
-
-<!-- Campo de SubTotal -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="subTotal">SubTotal</label>
-    <input type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal" readonly required>
-    <small class="form-text text-muted"></small>
-  </div>
-</div>
-
-<!-- Campo de IVA -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="iva">IVA</label>
-    <input type="number" class="form-control" name="iva" id="iva" placeholder="IVA" readonly required>
-    <small class="form-text text-muted"></small>
-  </div>
-</div>
-
-<!-- Campo de Monto Total -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="montoTotal">Monto Total</label>
-    <input type="number" class="form-control" name="montoTotal" id="montoTotal" placeholder="Monto Total" readonly required>
-    <small class="form-text text-muted"></small>
-  </div>
-</div>
-       <!-- Campo de fecha de venta -->
-<div class="col-md-12">
-  <div class="form-group">
-    <label for="fechaVenta">Fecha de Venta</label>
-    <input type="text" class="form-control" name="fechaVenta" id="fechaVenta" placeholder="Fecha de Venta" readonly required>
-    <small class="form-text text-muted"></small>
-  </div>
-</div>
-  
-        <div class="form-group form-check p-2" style="text-align: left;">
-          <button type="button" class="btn btn-primary" onclick="crearVenta()">
-            Agregar Venta
-          </button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitleId">Agregar Venta</h5>
+          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearVenta()"
+            style="background-color: transparent; border: 0;">X</button>
         </div>
-      </form>
+
+        <div class="modal-body" style="width: auto;">
+          <form class="m-needs-validation" novalidate id="frmVenta">
+            <!-- Campo de cliente -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <select id="selectCliente" name="cliente" class="form-control" onchange="seleccionarCliente()">
+                  <option value="">Selecciona un cliente</option>
+                  <!-- Clientes cargados dinámicamente en JavaScript -->
+                </select>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>
+
+
+            <!-- Campo de cédula -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="cedula">Cédula</label>
+                <input type="text" class="form-control" name="cedula" id="cedula" placeholder="Cédula del cliente"
+                  readonly required>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>
+
+            <!-- Campo de producto -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="producto">Producto</label>
+                <select class="form-control" name="producto" id="producto" onchange="seleccionarProducto()" required>
+                  <option value="">Selecciona un producto</option>
+                  <!-- Productos cargados dinámicamente en JavaScript -->
+                </select>
+              </div>
+            </div>
+
+
+            <!-- Campo de Cantidad -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <select class="form-control" name="cantidad" id="cantidad" required>
+                  <!-- Opciones serán cargadas dinámicamente por JavaScript -->
+                </select>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>  
+
+
+            <!-- Campo de SubTotal -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="subTotal">SubTotal</label>
+                <input type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal" readonly
+                  required>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>
+
+
+            <!-- Campo de IVA -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="iva">IVA 13%</label>
+                <input type="number" class="form-control" name="iva" id="iva" placeholder="IVA" readonly required>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>
+
+            <!-- Campo de Monto Total -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="montoTotal">Monto Total</label>
+                <input type="number" class="form-control" name="montoTotal" id="montoTotal" placeholder="Monto Total"
+                  readonly required>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>
+            <!-- Campo de fecha de venta -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="fechaVenta">Fecha de Venta</label>
+                <input type="text" class="form-control" name="fechaVenta" id="fechaVenta" placeholder="Fecha de Venta"
+                  readonly required>
+                <small class="form-text text-muted"></small>
+              </div>
+            </div>
+
+            <div class="form-group form-check p-2" style="text-align: left;">
+              <button type="button" class="btn btn-primary" onclick="crearVenta()">
+                Agregar Venta
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
-  </div>
 
- </div>
+    <!-- aaa -->
 
-<!-- aaa -->
+    <footer>
+      <div id="footer"></div>
 
-  <footer>
-    <div id="footer"></div>
-
-  </footer>
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/main.js"></script>
+    </footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
 
 
-  <script src="js/menu.js "></script>
-  <script src="js/index.js "></script>
-  <script src="js/footer.js"></script>
+    <script src="js/menu.js "></script>
+    <script src="js/index.js "></script>
+    <script src="js/footer.js"></script>
 
-  <script src="js/venta.js "></script>
+    <script src="js/venta.js "></script>
 </body>
 
 </html>
-

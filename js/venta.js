@@ -27,7 +27,7 @@ function cargarVentas() {
             <td>
               <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombreCliente}','${venta.cedulaCliente}','${venta.nombreProducto}',${venta.cantidadProducto},${venta.subtotal},${venta.iva},${venta.montoTotal},'${venta.fechaVenta}')" role="button">Editar</a>
               <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
-              <a name="" id="" class="btn btn-success" onclick="imprimirPdf(${venta.codFactura})" role="button">Imprimir</a>
+              <a name="" id="" class="btn btn-secondary" onclick="imprimirPdf(${venta.codFactura})" role="button">Imprimir</a>
             </td>
           </tr>`;
       }

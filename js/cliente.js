@@ -178,7 +178,7 @@ formulario.addEventListener("submit", function (e) {
         document.getElementById("apellido").value = "";
         document.getElementById("correo").value = "";
         document.getElementById("telefono").value = "";
-
+        
         
         swal(
           "Se ha modificado correctamente!",

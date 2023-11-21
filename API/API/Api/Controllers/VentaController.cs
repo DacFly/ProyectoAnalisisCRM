@@ -26,9 +26,29 @@ namespace Api.Controllers
         public async Task<ActionResult<IEnumerable<Venta>>> GetVentas()
         {
             var ventas = await _context.Venta
-                .Include(v => v.Cliente)
-                .Include(v => v.Producto)
                 .ToListAsync();
+
+            // Mapear manualmente la información del cliente y producto para cada venta
+            foreach (var venta in ventas)
+            {
+                var cliente = _context.Cliente.FirstOrDefault(c => c.ClienteId == venta.ClienteId);
+
+                if (cliente != null)
+                {
+                    venta.NombreCliente = cliente.Nombre;
+                    venta.CedulaCliente = cliente.Cedula;
+                    // Mapear otras propiedades del cliente según sea necesario
+                }
+
+                var producto = _context.Producto.FirstOrDefault(p => p.ProductoId == venta.ProductoId);
+
+                if (producto != null)
+                {
+                    venta.NombreProducto = producto.NombreProducto;
+                    // Mapear otras propiedades del producto según sea necesario
+                }
+            }
+
             return Ok(ventas);
         }
 
@@ -38,8 +58,6 @@ namespace Api.Controllers
         public async Task<ActionResult<Venta>> GetVenta(int id)
         {
             var venta = await _context.Venta
-                .Include(v => v.Cliente)
-                .Include(v => v.Producto)
                 .FirstOrDefaultAsync(v => v.CodFactura == id);
 
             if (venta == null)
@@ -47,16 +65,33 @@ namespace Api.Controllers
                 return NotFound();
             }
 
+            // Mapear manualmente la información del cliente y producto para la venta específica
+            var cliente = _context.Cliente.FirstOrDefault(c => c.ClienteId == venta.ClienteId);
+
+            if (cliente != null)
+            {
+                venta.NombreCliente = cliente.Nombre;
+                venta.CedulaCliente = cliente.Cedula;
+                // Mapear otras propiedades del cliente según sea necesario
+            }
+
+            var producto = _context.Producto.FirstOrDefault(p => p.ProductoId == venta.ProductoId);
+
+            if (producto != null)
+            {
+                venta.NombreProducto = producto.NombreProducto;
+                // Mapear otras propiedades del producto según sea necesario
+            }
+
             return Ok(venta);
         }
+
 
         [HttpGet]
         [Route("BuscarVentaPorCodFactura/{codFactura}")]
         public IActionResult GetVentaPorCodFactura(int codFactura)
         {
             var venta = _context.Venta
-                .Include(v => v.Cliente)
-                .Include(v => v.Producto)
                 .FirstOrDefault(v => v.CodFactura == codFactura);
 
             if (venta == null)
@@ -64,21 +99,47 @@ namespace Api.Controllers
                 return NotFound();
             }
 
+            // Mapear manualmente la información del cliente
+            var cliente = _context.Cliente.FirstOrDefault(c => c.ClienteId == venta.ClienteId);
+
+            if (cliente != null)
+            {
+                venta.NombreCliente = cliente.Nombre;
+                venta.CedulaCliente = cliente.Cedula;
+                // Mapear otras propiedades del cliente según sea necesario
+            }
+
             return Ok(venta);
         }
+
 
         // POST: Venta/CrearVenta
         [HttpPost]
         [Route("CrearVenta")]
         public async Task<ActionResult<Venta>> CreateVenta(Venta venta)
         {
+            // Agrega la venta a la base de datos
             _context.Venta.Add(venta);
             await _context.SaveChangesAsync();
 
+            // Recupera el producto correspondiente
+            var producto = await _context.Producto.FindAsync(venta.ProductoId);
+
+            if (producto != null)
+            {
+                // Ajusta la cantidad de productos
+                producto.Cantidad -= venta.CantidadProducto;
+
+                // Guarda los cambios en la base de datos
+                await _context.SaveChangesAsync();
+            }
+
+            // Retorna la respuesta
             return CreatedAtAction(nameof(GetVenta), new { id = venta.CodFactura }, venta);
         }
 
-        // PUT: Venta/EditarVenta
+
+        // PUT: api/Usuarios/5
         [HttpPut]
         [Route("EditarVenta")]
         public async Task<IActionResult> UpdateVenta(Venta venta)
@@ -96,6 +157,9 @@ namespace Api.Controllers
                 }
                 else
                 {
+
+                }
+                {
                     throw;
                 }
             }
@@ -108,17 +172,43 @@ namespace Api.Controllers
         [Route("BorrarVenta/{id}")]
         public async Task<IActionResult> DeleteVenta(int id)
         {
-            var venta = await _context.Venta.FindAsync(id);
-            if (venta == null)
+            try
             {
-                return NotFound();
+                // Buscar la venta por ID
+                var venta = await _context.Venta.FindAsync(id);
+                if (venta == null)
+                {
+                    return NotFound();
+                }
+
+                // Obtener el producto asociado a la venta
+                var producto = await _context.Producto.FindAsync(venta.ProductoId);
+
+                if (producto == null)
+                {
+                    return NotFound();
+                }
+
+                // Ajustar la cantidad de productos
+                producto.Cantidad += venta.CantidadProducto;
+
+                // Eliminar la venta
+                _context.Venta.Remove(venta);
+
+                // Guardar cambios en la base de datos
+                await _context.SaveChangesAsync();
+
+                // Devolver el producto actualizado
+                return Ok(producto);
             }
-
-            _context.Venta.Remove(venta);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, "Error interno del servidor");
+            }
         }
+
+
 
         private bool VentaExists(int id)
         {
@@ -169,6 +259,32 @@ namespace Api.Controllers
             // Devolver el producto con el precio y la cantidad
             return Ok(new { PrecioProducto = producto.PrecioProducto, Cantidad = producto.Cantidad });
         }
+
+        [HttpGet("obtener-fecha-actual")]
+        public IActionResult ObtenerFechaActual()
+        {
+            var fechaActual = DateTime.Now;
+            return Ok(new { fecha = fechaActual });
+        }
+
+        [HttpGet]
+        [Route("ObtenerInfoClienteProducto/{codFactura}")]
+        public IActionResult ObtenerInfoClienteProducto(int codFactura)
+        {
+            var venta = _context.Venta.FirstOrDefault(v => v.CodFactura == codFactura);
+
+            if (venta == null)
+            {
+                return NotFound(); // La venta no existe
+            }
+
+            var clienteId = venta.ClienteId;
+            var productoId = venta.ProductoId;
+
+            return Ok(new { ClienteId = clienteId, ProductoId = productoId });
+        }
+
+
 
 
 

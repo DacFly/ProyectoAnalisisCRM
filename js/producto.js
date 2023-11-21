@@ -42,38 +42,54 @@ cargarProductos();
 
 input.addEventListener("input", function () {
   if (input.value != "") {
-    fetch(
-      "https://localhost:7203/Producto/ProductoPorID/" + input.value,
-      {
-        method: "GET",
+    fetch("https://localhost:7203/Venta/BuscarVenta/" + input.value, {
+      method: "GET",
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Error al buscar la venta');
       }
-    )
-      .then((productos) => productos.json())
-      .then((jsonProductos) => {
-        contenidoTablaResultado.innerHTML = ``;
-        console.log(jsonProductos)
-        for (const producto of jsonProductos) {
+      return response.json();
+    })
+    .then((jsonVentas) => {
+      contenidoTablaResultado.innerHTML = ``;
+      console.log(jsonVentas);
+      
+      if (jsonVentas && jsonVentas.length > 0) {
+        for (const venta of jsonVentas) {
           contenidoTablaResultado.innerHTML += `
-          <tr class="table-primary" >
-          <td>${producto.productoId}</td>
-          <td>${producto.codProducto}</td>
-          <td>${producto.nombreProducto}</td>
-          <td>${producto.descripcionProducto}</td>
-          <td>${producto.precioProducto}</td>
-          <td>${producto.cantidad}</td>
-          <td>
-            <a name="" id="" class="btn btn-info" onclick="editar('${producto.productoId}', '${producto.codProducto}', '${producto.combreProducto}', '${producto.descripcionProducto}', '${producto.precioProducto}','${producto.cantidad}')" role="button">Editar</a>
-            <a name="" id="" class="btn btn-danger" onclick="eliminar('${producto.productoId}')" role="button">Eliminar</a>
-          </td>
-      </tr>`;
+            <tr class="table-primary">
+              <td>${venta.codFactura}</td>
+              <td>${venta.nombreCliente}</td>
+              <td>${venta.cedulaCliente}</td>
+              <td>${venta.nombreProducto}</td>
+              <td>${venta.productoId}</td>
+              <td>${venta.subtotal}</td>
+              <td>${venta.iva}</td>
+              <td>${venta.montoTotal}</td>
+              <td>${venta.fechaVenta}</td>
+              <td>
+                <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombreCliente}', '${venta.cedulaCliente}','${venta.nombreProducto}','${venta.productoId}', ${venta.subtotal}, ${venta.iva}, ${venta.montoTotal}, '${venta.fechaVenta}')" role="button">Editar</a>
+                <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
+              </td>
+            </tr>`;
         }
-      })
-      .catch((error) => {
-        // Aquí puedes manejar los errores de la solicitud
-        console.error(error);
-      });
-  }else cargarProductos();
+      } else {
+        // No se encontraron ventas
+        contenidoTablaResultado.innerHTML = "Venta no encontrada";
+      }
+    })
+    .catch((error) => {
+      // Manejar errores de la solicitud
+      console.error('Error al procesar la respuesta de la API:', error);
+      contenidoTablaResultado.innerHTML = "Error al buscar la venta";
+    });
+  } else {
+    // Cuando el input está vacío, cargas todas las ventas
+    cargarVentas();
+  }
 });
+
 
 
 function mostrarModalCrearProducto() {

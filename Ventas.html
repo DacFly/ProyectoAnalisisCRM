@@ -14,13 +14,14 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Bootstrap CSS v5.2.1 -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
   <title>Data Connect</title>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
 </head>
 
 <body>
-
-
+  
   <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close mt-3">
@@ -198,7 +199,8 @@
 
 
   <!-- AAAAAAAAA2 -->
-  <div class="modal" id="modalEditarVenta" tabindex="-1" role="dialog" aria-labelledby="modalEditarVentaLabel" aria-hidden="true">
+  <div class="modal" id="modalEditarVenta" tabindex="-1" role="dialog" aria-labelledby="modalEditarVentaLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -216,19 +218,19 @@
             </div>
             <div class="form-group">
               <label for="editCodFactura">Cod Factura</label>
-              <input type="text" class="form-control" id="editCodFactura" >
+              <input type="text" class="form-control" id="editCodFactura">
             </div>
             <div class="form-group">
               <label for="editNombreCliente">Nombre Cliente</label>
-              <input type="text" class="form-control" id="editNombreCliente" >
+              <input type="text" class="form-control" id="editNombreCliente">
             </div>
             <div class="form-group">
               <label for="editCedula">Cedula</label>
-              <input type="text" class="form-control" id="editCedula" >
+              <input type="text" class="form-control" id="editCedula">
             </div>
             <div class="form-group">
               <label for="editNombreProducto">Nombre Producto</label>
-              <input type="text" class="form-control" id="editNombreProducto" >
+              <input type="text" class="form-control" id="editNombreProducto">
             </div>
             <div class="form-group">
               <label for="editCantidad">Cantidad</label>
@@ -236,11 +238,11 @@
             </div>
             <div class="form-group">
               <label for="editSubtotal">Subtotal</label>
-              <input type="text" class="form-control" id="editSubtotal" >
+              <input type="text" class="form-control" id="editSubtotal">
             </div>
             <div class="form-group">
               <label for="editIVA">IVA</label>
-              <input type="text" class="form-control" id="editIVA" >
+              <input type="text" class="form-control" id="editIVA">
             </div>
             <div class="form-group">
               <label for="editMontoTotal">Monto Total</label>
@@ -248,7 +250,7 @@
             </div>
             <div class="form-group">
               <label for="editFechaVenta">Fecha de la Venta</label>
-              <input type="text" class="form-control" id="editFechaVenta" >
+              <input type="text" class="form-control" id="editFechaVenta">
             </div>
             <button type="button" class="btn btn-primary" onclick="actualizarVenta()">Actualizar Venta</button>
           </form>
@@ -274,9 +276,7 @@
   <script src="js/menu.js "></script>
   <script src="js/index.js "></script>
   <script src="js/footer.js"></script>
-
   <script src="js/venta.js "></script>
-  
 
 </body>
 

@@ -27,7 +27,7 @@ function cargarVentas() {
             <td>
               <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombreCliente}','${venta.cedulaCliente}','${venta.nombreProducto}',${venta.cantidadProducto},${venta.subtotal},${venta.iva},${venta.montoTotal},'${venta.fechaVenta}')" role="button">Editar</a>
               <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
-              <a name="" id="" class="btn btn-secondary" onclick="imprimirPdf(${venta.codFactura})" role="button">Imprimir</a>
+              <a name="" id="" class="btn btn-secondary" onclick="imprimirPdf(${venta.codFactura},'${venta.nombreCliente}','${venta.cedulaCliente}','${venta.nombreProducto}',${venta.cantidadProducto},${venta.subtotal},${venta.iva},${venta.montoTotal},'${venta.fechaVenta}')" role="button">Imprimir</a>
             </td>
           </tr>`;
       }
@@ -46,70 +46,72 @@ input.addEventListener("input", function () {
     fetch("https://localhost:7203/Venta/BuscarVenta/" + input.value, {
       method: "GET",
     })
-    .then((response) => {
-      if (response.status === 404) {
-        throw new Error('La venta no fue encontrada');
-      }
-      if (!response.ok) {
-        throw new Error('Error al buscar la venta. Código de estado: ' + response.status);
-      }
-      return response.json();
-    })
-    .then((ventas) => {
-      contenidoTablaResultado.innerHTML = ``;
-      console.log(ventas);
-
-      if (Array.isArray(ventas)) {
-        if (ventas.length > 0) {
-          for (const venta of ventas) {
-            contenidoTablaResultado.innerHTML += `
-              <tr class="table-primary">
-                <td>${venta.codFactura}</td>
-                <td>${venta.nombreCliente}</td>
-                <td>${venta.cedulaCliente}</td>
-                <td>${venta.nombreProducto}</td>
-                <td>${venta.productoId}</td>
-                <td>${venta.subtotal}</td>
-                <td>${venta.iva}</td>
-                <td>${venta.montoTotal}</td>
-                <td>${venta.fechaVenta}</td>
-                <td>
-                  <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombreCliente}', '${venta.cedulaCliente}','${venta.nombreProducto}','${venta.productoId}', ${venta.subtotal}, ${venta.iva}, ${venta.montoTotal}, '${venta.fechaVenta}')" role="button">Editar</a>
-                  <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
-                  
-                </td>
-              </tr>`;
-          }
-        } else {
-          // No se encontraron ventas
-          contenidoTablaResultado.innerHTML = "Venta no encontrada";
+      .then((response) => {
+        if (response.status === 404) {
+          throw new Error('La venta no fue encontrada');
         }
-      } else if (typeof ventas === 'object') {
-        // Si la respuesta es un objeto, trata de mostrar esa venta
-        contenidoTablaResultado.innerHTML += `
-          <tr class="table-primary">
-            <td>${ventas.codFactura}</td>
-            <td>${ventas.nombreCliente}</td>
-            <td>${ventas.cedulaCliente}</td>
-            <td>${ventas.nombreProducto}</td>
-            <td>${ventas.productoId}</td>
-            <td>${ventas.subtotal}</td>
-            <td>${ventas.iva}</td>
-            <td>${ventas.montoTotal}</td>
-            <td>${ventas.fechaVenta}</td>
-            <td>
-              <a name="" id="" class="btn btn-info" onclick="editar(${ventas.codFactura},'${ventas.nombreCliente}', '${ventas.cedulaCliente}','${ventas.nombreProducto}','${ventas.productoId}', ${ventas.subtotal}, ${ventas.iva}, ${ventas.montoTotal}, '${ventas.fechaVenta}')" role="button">Editar</a>
-              <a name="" id="" class="btn btn-danger" onclick="eliminar(${ventas.codFactura})" role="button">Eliminar</a>
-            
-            </td>
-          </tr>`;
-      }
-    })
-    .catch((error) => {
-      // Manejar errores de la solicitud
-      console.error('Error al procesar la respuesta de la API:', error);
-      contenidoTablaResultado.innerHTML = error.message; // Mostrar el mensaje de error específico
-    });
+        if (!response.ok) {
+          throw new Error('Error al buscar la venta. Código de estado: ' + response.status);
+        }
+        return response.json();
+      })
+      .then((ventas) => {
+        contenidoTablaResultado.innerHTML = ``;
+        console.log(ventas);
+
+        if (Array.isArray(ventas)) {
+          if (ventas.length > 0) {
+            for (const venta of ventas) {
+              contenidoTablaResultado.innerHTML += `
+  <tr class="table-primary">
+    <td>${venta.codFactura}</td>
+    <td>${venta.nombreCliente}</td>
+    <td>${venta.cedulaCliente}</td>
+    <td>${venta.nombreProducto}</td>
+    <td>${venta.cantidadProducto}</td>
+    <td>${venta.productoId}</td>
+    <td>${venta.subtotal}</td>
+    <td>${venta.iva}</td>
+    <td>${venta.montoTotal}</td>
+    <td>${venta.fechaVenta}</td>
+    <td>
+    <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombreCliente}','${venta.cedulaCliente}','${venta.nombreProducto}',${venta.cantidadProducto},${venta.subtotal},${venta.iva},${venta.montoTotal},'${venta.fechaVenta}')" role="button">Editar</a>
+    <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
+    <a name="" id="" class="btn btn-secondary" onclick="imprimirPdf(${venta.codFactura},'${venta.nombreCliente}','${venta.cedulaCliente}','${venta.nombreProducto}',${venta.cantidadProducto},${venta.subtotal},${venta.iva},${venta.montoTotal},'${venta.fechaVenta}')" role="button">Imprimir</a>
+      </td>
+  </tr>`;
+            }
+          } else {
+            // No se encontraron ventas
+            contenidoTablaResultado.innerHTML = "Venta no encontrada";
+          }
+        } else if (typeof ventas === 'object') {
+          // Si la respuesta es un objeto, trata de mostrar esa venta
+          contenidoTablaResultado.innerHTML += `
+  <tr class="table-primary">
+    <td>${ventas.codFactura}</td>
+    <td>${ventas.nombreCliente}</td>
+    <td>${ventas.cedulaCliente}</td>
+    <td>${ventas.nombreProducto}</td>
+    <td>${ventas.cantidadProducto}</td>
+    <td>${ventas.productoId}</td>
+    <td>${ventas.subtotal}</td>
+    <td>${ventas.iva}</td>
+    <td>${ventas.montoTotal}</td>
+    <td>${ventas.fechaVenta}</td>
+    <td>
+      <a name="" id="" class="btn btn-info" onclick="editar(${ventas.codFactura},'${ventas.nombreCliente}', '${ventas.cedulaCliente}','${ventas.nombreProducto}',${ventas.cantidadProducto},'${ventas.productoId}', ${ventas.subtotal}, ${ventas.iva}, ${ventas.montoTotal}, '${ventas.fechaVenta}')" role="button">Editar</a>
+      <a name="" id="" class="btn btn-danger" onclick="eliminar(${ventas.codFactura})" role="button">Eliminar</a>
+      <a name="" id="" class="btn btn-secondary" onclick="imprimirPdf(${ventas.codFactura},'${ventas.nombreCliente}','${ventas.cedulaCliente}','${ventas.nombreProducto}',${ventas.cantidadProducto},${ventas.subtotal},${ventas.iva},${ventas.montoTotal},'${ventas.fechaVenta}')" role="button">Imprimir</a>
+    </td>
+  </tr>`;
+        }
+      })
+      .catch((error) => {
+        // Manejar errores de la solicitud
+        console.error('Error al procesar la respuesta de la API:', error);
+        contenidoTablaResultado.innerHTML = error.message; // Mostrar el mensaje de error específico
+      });
   } else {
     // Cuando el input está vacío, cargas todas las ventas
     cargarVentas();
@@ -369,63 +371,56 @@ function crearVenta() {
   var subTotal = document.getElementById("subTotal").value;
   var iva = document.getElementById("iva").value;
   var montoTotal = document.getElementById("montoTotal").value;
-  var fechaVenta = document.getElementById("fechaVenta").value;
-  // Obtener la fecha actual desde la API
-  fetch("https://localhost:7203/Venta/obtener-fecha-actual")
-    .then(response => response.json())
-    .then(data => {
-      var fechaVenta = data.fecha; // Utilizar la fecha obtenida desde la API
 
-      // Objeto de venta
-      var venta = {
-        clienteId: clienteId,
-        nombreCliente: nombreCliente,
-        cedulaCliente: cedulaCliente,
-        productoId: productoId,
-        nombreProducto: nombreProducto,
-        cantidadProducto: cantidadProducto,
-        subTotal: subTotal,
-        iva: iva,
-        montoTotal: montoTotal,
-        fechaVenta: fechaVenta,
-      };
+  // Obtener la fecha actual
+  var fechaActual = new Date().toISOString().slice(0, 10);
 
-      // Actualizar el campo de fecha en el formulario
-      document.getElementById("fechaVenta").value = fechaVenta;
+  // Objeto de venta
+  var venta = {
+    clienteId: clienteId,
+    nombreCliente: nombreCliente,
+    cedulaCliente: cedulaCliente,
+    productoId: productoId,
+    nombreProducto: nombreProducto,
+    cantidadProducto: cantidadProducto,
+    subTotal: subTotal,
+    iva: iva,
+    montoTotal: montoTotal,
+    fechaVenta: fechaActual,
+  };
 
-      // Realizar la solicitud POST a la API para crear la venta
-      fetch("https://localhost:7203/Venta/CrearVenta", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(venta),
-      })
-        .then(response => {
-          if (response.ok) {
-            swal("¡Venta Agregada!", "La venta se ha agregado correctamente.", "success");
-            cargarVentas();
-            // Restablecer los valores del formulario
-            document.getElementById("selectCliente").value = "";
-            document.getElementById("cedula").value = "";
-            document.getElementById("producto").value = "";
-            document.getElementById("cantidad").value = "";
-            document.getElementById("subTotal").value = "";
-            document.getElementById("iva").value = "";
-            document.getElementById("montoTotal").value = "";
-            cerrarModalCrearVenta();
-          } else {
-            swal("Error", "Ocurrió un error al agregar la venta. Por favor, inténtalo nuevamente.", "error");
-          }
-        })
-        .catch(error => {
-          console.error('Error al procesar la respuesta de la API:', error);
-          console.error('Respuesta de la API:', venta);
-          console.error('URL de la solicitud:', `https://localhost:7203/Venta/ListaProductos/${selectedProductoId}`);
-        });
+  // Actualizar el campo de fecha en el formulario
+  document.getElementById("fechaVenta").value = fechaActual;
+
+  // Realizar la solicitud POST a la API para crear la venta
+  fetch("https://localhost:7203/Venta/CrearVenta", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(venta),
+  })
+    .then(response => {
+      if (response.ok) {
+        swal("¡Venta Agregada!", "La venta se ha agregado correctamente.", "success");
+        cargarVentas();
+        // Restablecer los valores del formulario
+        document.getElementById("selectCliente").value = "";
+        document.getElementById("cedula").value = "";
+        document.getElementById("producto").value = "";
+        document.getElementById("cantidad").value = "";
+        document.getElementById("subTotal").value = "";
+        document.getElementById("iva").value = "";
+        document.getElementById("montoTotal").value = "";
+        cerrarModalCrearVenta();
+      } else {
+        swal("Error", "Ocurrió un error al agregar la venta. Por favor, inténtalo nuevamente.", "error");
+      }
     })
     .catch(error => {
-      console.error('Error al obtener la fecha actual desde la API:', error);
+      console.error('Error al procesar la respuesta de la API:', error);
+      console.error('Respuesta de la API:', venta);
+      console.error('URL de la solicitud:', `https://localhost:7203/Venta/ListaProductos/${selectedProductoId}`);
     });
 }
 
@@ -579,19 +574,19 @@ function actualizarVenta() {
     },
     body: JSON.stringify(datosActualizar),
   })
-  .then(response => {
-    console.log("Respuesta del servidor:", response); // Agregar este console log
-    if (response.ok) {
-      swal("¡Venta Actualizada!", "La venta se ha actualizado correctamente.", "success");
-      cargarVentas(); // Vuelve a cargar las ventas después de la actualización
-      $('#modalEditarVenta').modal('hide'); // Cierra el modal después de actualizar
-    } else {
-      swal("Error", "Ocurrió un error al actualizar la venta. Por favor, inténtalo nuevamente.", "error");
-    }
-  })
-  .catch(error => {
-    console.error('Error al procesar la respuesta de la API:', error);
-  });
+    .then(response => {
+      console.log("Respuesta del servidor:", response); // Agregar este console log
+      if (response.ok) {
+        swal("¡Venta Actualizada!", "La venta se ha actualizado correctamente.", "success");
+        cargarVentas(); // Vuelve a cargar las ventas después de la actualización
+        $('#modalEditarVenta').modal('hide'); // Cierra el modal después de actualizar
+      } else {
+        swal("Error", "Ocurrió un error al actualizar la venta. Por favor, inténtalo nuevamente.", "error");
+      }
+    })
+    .catch(error => {
+      console.error('Error al procesar la respuesta de la API:', error);
+    });
 }
 
 
@@ -652,21 +647,39 @@ function cargarInfoClienteProducto(codFactura) {
 
 
 
-function imprimirPdf(codFactura, nombreCliente, cedulaCliente, nombreProducto, productoId, subtotal, iva, montoTotal, fechaVenta) {
-  // Crea un nuevo objeto jsPDF
-  var pdf = new jsPDF();
+function imprimirPdf(codFactura, nombreCliente, cedulaCliente, nombreProducto, cantidadProducto, subtotal, iva, montoTotal, fechaVenta) {
+  // Crear un nuevo documento jsPDF
+  const pdf = new jsPDF();
 
-  // Agrega contenido al PDF
-  pdf.text(`Código de Factura: ${codFactura}`, 20, 20);
-  pdf.text(`Nombre del Cliente: ${nombreCliente}`, 20, 30);
-  pdf.text(`Cédula del Cliente: ${cedulaCliente}`, 20, 40);
-  pdf.text(`Nombre del Producto: ${nombreProducto}`, 20, 50);
-  pdf.text(`ID del Producto: ${productoId}`, 20, 60);
-  pdf.text(`Subtotal: ${subtotal}`, 20, 70);
-  pdf.text(`IVA: ${iva}`, 20, 80);
-  pdf.text(`Monto Total: ${montoTotal}`, 20, 90);
-  pdf.text(`Fecha de Venta: ${fechaVenta}`, 20, 100);
+  // Añadir título al documento
+  pdf.setFont("times", "bold");
+  pdf.setFontSize(20);
+  pdf.text("FACTURA DE VENTA", 20, 20);
 
-  // Guarda el PDF con un nombre específico
-  pdf.save(`Venta_${codFactura}.pdf`);
+  // Añadir detalles de la venta al documento
+  pdf.setFontSize(12);
+  pdf.text(`Código de Factura: ${codFactura}`, 20, 30);
+  pdf.text(`Nombre del Cliente: ${nombreCliente}`, 20, 40);
+  pdf.text(`Cédula del Cliente: ${cedulaCliente}`, 20, 50);
+  pdf.text(`Nombre del Producto: ${nombreProducto}`, 20, 60);
+  pdf.text(`Cantidad: ${cantidadProducto}`, 20, 70);
+  pdf.text(`Subtotal: ${subtotal}`, 20, 80);
+  pdf.text(`IVA: ${iva}`, 20, 90);
+  pdf.text(`Monto Total: ${montoTotal}`, 20, 100);
+  pdf.text(`Fecha de Venta: ${fechaVenta}`, 20, 110);
+
+  // Guardar el documento con un nombre específico
+  const filename = `factura_${codFactura}.pdf`;
+  pdf.save(filename);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener el campo de fecha de venta
+  var fechaVentaField = document.getElementById("fechaVenta");
+
+  // Obtener la fecha actual
+  var fechaActual = new Date().toISOString().slice(0, 10);
+
+  // Asignar la fecha actual al campo de fecha de venta
+  fechaVentaField.value = fechaActual;
+});

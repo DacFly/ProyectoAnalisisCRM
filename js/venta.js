@@ -239,7 +239,11 @@ function seleccionarProducto() {
 
           // Actualizar los campos de IVA y monto total
           ivaInput.value = iva.toFixed(2);  // Ajustar a dos decimales
-          montoTotalInput.value = montoTotal.toFixed(2);  // Ajustar a dos decimales
+
+          // Sumar el valor del IVA al monto total
+          const montoTotalConIva = montoTotal + iva;
+
+          montoTotalInput.value = montoTotalConIva.toFixed(2);  // Ajustar a dos decimales
         });
 
         // Ejecutar la lógica de cálculos para la cantidad inicial (1)
@@ -648,25 +652,69 @@ function cargarInfoClienteProducto(codFactura) {
 
 
 function imprimirPdf(codFactura, nombreCliente, cedulaCliente, nombreProducto, cantidadProducto, subtotal, iva, montoTotal, fechaVenta) {
-  // Crear un nuevo documento jsPDF
-  const pdf = new jsPDF();
+  // Crear un nuevo documento jsPDF con orientación horizontal
+  const pdf = new jsPDF('landscape');
 
-  // Añadir título al documento
+  // Agregar fondo blanco
+  pdf.setFillColor(255, 255, 255);
+  pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, 'F');
+
+  // Añadir logo en la esquina superior derecha
+  var logo = new Image();
+  logo.src = 'images/logo.png';  // Reemplaza 'ruta/a/tu/logo.png' con la ruta correcta a tu logo
+  pdf.addImage(logo, 'PNG', pdf.internal.pageSize.width - 50, 10, 40, 40);
+
+  // Añadir título al documento con estilo negro
+  pdf.setTextColor(0, 0, 0); // Configurar color a negro
   pdf.setFont("times", "bold");
   pdf.setFontSize(20);
-  pdf.text("FACTURA DE VENTA", 20, 20);
+  pdf.text("DataConnect", 20, 20);
+
+  // Restaurar color de texto a negro
+  pdf.setTextColor(0, 0, 0);
 
   // Añadir detalles de la venta al documento
   pdf.setFontSize(12);
-  pdf.text(`Código de Factura: ${codFactura}`, 20, 30);
-  pdf.text(`Nombre del Cliente: ${nombreCliente}`, 20, 40);
-  pdf.text(`Cédula del Cliente: ${cedulaCliente}`, 20, 50);
-  pdf.text(`Nombre del Producto: ${nombreProducto}`, 20, 60);
-  pdf.text(`Cantidad: ${cantidadProducto}`, 20, 70);
-  pdf.text(`Subtotal: ${subtotal}`, 20, 80);
-  pdf.text(`IVA: ${iva}`, 20, 90);
-  pdf.text(`Monto Total: ${montoTotal}`, 20, 100);
-  pdf.text(`Fecha de Venta: ${fechaVenta}`, 20, 110);
+  pdf.setFont("times", "normal"); // Configurar estilo normal
+
+  // Textos en negrita
+  pdf.setFont("times", "bold");
+  pdf.text(`Código de Factura:`, 20, 30);
+  pdf.text(`Nombre del Cliente:`, 20, 40);
+  pdf.text(`Cédula del Cliente:`, 20, 50);
+  pdf.text(`Nombre del Producto:`, 20, 60);
+  pdf.text(`Cantidad:`, 20, 70);
+  pdf.text(`Subtotal:`, 20, 80);
+  pdf.text(`IVA:`, 20, 90);
+  pdf.text(`Monto Total:`, 20, 100);
+  pdf.text(`Fecha de Venta:`, 20, 110);
+
+  // Textos en estilo normal
+  pdf.setFont("times", "normal");
+  pdf.text(`${codFactura}`, 95, 30);
+  pdf.text(`${nombreCliente}`, 95, 40);
+  pdf.text(`${cedulaCliente}`, 95, 50);
+  pdf.text(`${nombreProducto}`, 95, 60);
+  pdf.text(`${cantidadProducto}`, 95, 70);
+  pdf.text(`${subtotal}`, 95, 80);
+  pdf.text(`${iva}`, 95, 90);
+  pdf.text(`${montoTotal}`, 95, 100);
+  pdf.text(`${fechaVenta}`, 95, 110);
+
+  // Añadir información con enlaces a redes sociales en el pie de página en negrita
+  pdf.setFontSize(10);
+  pdf.setFont("times", "bold"); // Configurar estilo negrita
+  pdf.text('Síguenos en redes sociales:', 20, pdf.internal.pageSize.height - 20);
+
+  // Enlace a Facebook
+  pdf.textWithLink('Facebook', 80, pdf.internal.pageSize.height - 20, { url: 'https://www.facebook.com/tu_pagina_de_facebook' });
+
+  // Enlace a Instagram
+  pdf.textWithLink('Instagram', 140, pdf.internal.pageSize.height - 20, { url: 'https://www.instagram.com/tu_cuenta_de_instagram' });
+
+  // Enlace a Twitter
+  pdf.textWithLink('Twitter', 220, pdf.internal.pageSize.height - 20, { url: 'https://twitter.com/tu_cuenta_de_twitter' });
+
 
   // Guardar el documento con un nombre específico
   const filename = `factura_${codFactura}.pdf`;

@@ -12,9 +12,13 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Contacto.css">
+
+  
   <!-- Bootstrap CSS v5.2.1 -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Data Connect</title>
+  
 </head>
 
 <body>
@@ -34,121 +38,34 @@
 
   </header>
 
-
   <div class="hero" style="background-color:#114C5F; height: 200px;"></div>
 
-  <div class="container">
+  <h1 style="text-align: center;">Déjanos saber tu consulta</h1>
 
-    <div class="table-responsive container-fluid">
-      <table class="table table-striped table-hover table-borderless table-success align-middle">
-        <h2>Contacto</h2>
-        <thead class="table-light">
-          <caption></caption>
-          <tr>
-            <th>Id Cliente</th>
-            <th>Cedula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-          </tr>
-        </thead>
-        <tbody class="table-group-divider" id="resultados">
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div class="flotante">
+  <form action="https://formspree.io/f/xbjvenqy" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="asunto" name="asunto" required>
+
+    <label for="message">Comentario:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+  
+
+</body>
+  
 
 
-  <div class="modal " id="modalCrearEvento" tabindex="" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-    aria-labelledby="modalTitleId" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitleId"> Agregar Evento</h5>
-          <button type="button" class="btn-close" aria-label="Close" onclick="cerrarModalCrearEvento()"
-            style="background-color: transparent; border: 0;">X</button>
-        </div>
 
-        <div class="modal-body" style="width: auto;">
-
-          <form class="m-needs-validation" novalidate id="frmEventos">
-            <input type="text" class="form-control" id="m-idEvento" required hidden>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Titulo</label>
-                  <input type="text" class="form-control" name="evento" id="evento" aria-describedby="helpId"
-                    placeholder="Titulo del evento">
-                  <small id="helpId" class="form-text text-muted"> Ingresa el titulo del evento</small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Direccion</label>
-                  <input type="text" class="form-control" name="evento" id="direccion" aria-describedby="helpId"
-                    placeholder="Direccion">
-                  <small id="helpId" class="form-text text-muted"> Ingrese direccion </small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Fecha Publicacion</label>
-                  <input type="Date" class="form-control" name="fechaPublicacion" id="fechaPublicacion"
-                    aria-describedby="helpId" placeholder="Fecha de Publicacion">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha de publicacion del evento</small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Fecha Evento</label>
-                  <input type="date" class="form-control" name="fechaEvento" id="fechaEvento" aria-describedby="helpId"
-                    placeholder="Fecha del evento" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la fecha del evento</small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="" class="form-label">Hora</label>
-                  <input type="time" class="form-control" name="hora" id="hora" aria-describedby="helpId"
-                    placeholder="Hora del evento">
-                  <small id="helpId" class="form-text text-muted"> Ingresa la hora del evento</small>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <!--ASDFADASF-->
-              <div class="col-md-12">
-                <div class="form-group text-align-center">
-                  <textarea name="comentarios" rows="7" cols="50" id="descripcion">Descripcion del Evento</textarea>
-                </div>
-              </div>
-            </div>
-            <div class="form-group form-check p-2" style="text-align: left;">
-              <button type="button" class="btn btn-primary" onclick="crearNuevoEv()">
-                Agregar
-              </button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div id="footer"></div>
-
-  </footer>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -158,7 +75,7 @@
 
   <script src="js/menu.js "></script>
   <script src="js/index.js "></script>
-  <script src="js/footer.js"></script>
+  
 </body>
 
 </html>

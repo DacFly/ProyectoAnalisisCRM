@@ -14,7 +14,6 @@ contenido.innerHTML += `
         <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
         <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
         <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
-        <li><a href="index.html" class="nav-link ">Contacto</a></li>
         <li><a href="Ventas.html" class="nav-link ">Ventas</a></li>
         <li><a href="Producto.html" class="nav-link ">Productos</a></li>
       </ul>

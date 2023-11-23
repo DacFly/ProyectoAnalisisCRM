@@ -2,9 +2,6 @@ var contenido = document.querySelector("#menu");
 
 
 contenido.innerHTML += `
-
-
-
 <div class="container-fluid">
 
   <div class="row ">
@@ -43,13 +40,16 @@ contenido.innerHTML += `
         </div>
       </div>
 
-      <div class="aligin-items-center" style="margin-left: 36px;padding: 20px;">
-        <button type="button" class=" d-none d-xl-block  mx-auto btn btn-primary">Login</button>
-      </div>
+      <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+        <div class="aligin-items-center" style="margin-left: 36px;padding: 20px;">
+          <button type="button" class=" mx-auto btn btn-primary">Login</button>
+        </div>
+      </ul>
 
+      <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
     </div>
     
-    <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+   
   </div>
 </div>
 

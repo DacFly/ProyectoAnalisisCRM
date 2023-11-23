@@ -2,12 +2,18 @@ var contenido = document.querySelector("#menu");
 
 
 contenido.innerHTML += `
+
+
+
 <div class="container-fluid">
-  <div class="row align-items-center">
+
+  <div class="row ">
+
     <div class="site-logo col-6">
       <a href="index.html"> <img src="images/logo.png" alt="Texto alternativo de la imagen" style="height: 100px;width: 140px">
       </a>
     </div>
+
     <nav class="mx-auto site-navigation">
       <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
         <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
@@ -18,13 +24,14 @@ contenido.innerHTML += `
         <li><a href="Producto.html" class="nav-link ">Productos</a></li>
       </ul>
     </nav>
+
     <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
       <div class="ml-auto">
         <div class="dropdown ">
           <nav class="mx-auto   site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li class="has-children">
-                <a href="#" class="div-drop">${sessionStorage.getItem("nombre")}</a>
+                <a href="#" >${sessionStorage.getItem("nombre")}</a>
                 <ul class="dropdown">
                   <li><a href="modificarPerfil.html">Modificar Perfil</a></li>
                   <li><a onclick="eliminarP()">Eliminar Perfil</a></li>
@@ -34,20 +41,17 @@ contenido.innerHTML += `
             </ul>
           </nav>
         </div>
-        <div class="container-fluid">
-  <!-- ... tu código existente ... -->
-
-
-  <div class="row align-items-center">
-    <div class="site-logo col-6">
-    <button type="button" class="btn btn-primary">Mi Botón</button>
-    </div>
-</div>
       </div>
-      <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+
+      <div class="aligin-items-center" style="margin-left: 36px;padding: 20px;">
+        <button type="button" class=" d-none d-xl-block  mx-auto btn btn-primary">Login</button>
+      </div>
+
     </div>
-  </div >
-</div >
+    
+    <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+  </div>
+</div>
 
 `;
 
@@ -151,4 +155,5 @@ function eliminarP(idUsuario) {
   };
 
 }
+
 

@@ -10,14 +10,14 @@ contenido.innerHTML += `
       <a href="index.html"> <img src="images/logo.png" alt="Texto alternativo de la imagen" style="height: 100px;width: 140px">
       </a>
     </div>
-
+    ${sessionStorage.getItem("rol") === "administrador" ? ' <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>' : ''}
     <nav class="mx-auto site-navigation">
       <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-        <li><a href="Clientes.html" class="nav-link ">Clientes</a></li>
-        <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li>
-        <li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li>
-        <li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li>
-        <li><a href="Ventas.html" class="nav-link ">Ventas</a></li>
+      ${sessionStorage.getItem("sesion") !== "false" ? '  <li><a href="Usuarios.html" class="nav-link ">Usuarios</a></li> '+
+      '<li><a href="TareasPendientes.html" class="nav-link ">Tareas Pendientes</a></li> '+
+      '<li><a href="Preferencias.html" class="nav-link ">Preferencias</a></li> '+
+      '<li><a href="Ventas.html" class="nav-link ">Ventas</a></li>' : ''} 
+       
         <li><a href="Producto.html" class="nav-link ">Productos</a></li>
       </ul>
     </nav>
@@ -39,12 +39,14 @@ contenido.innerHTML += `
           </nav>
         </div>
       </div>
-
-      <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-        <div class="aligin-items-center" style="margin-left: 36px;padding: 20px;">
-          <button type="button" class=" mx-auto btn btn-primary">Login</button>
-        </div>
-      </ul>
+      ${sessionStorage.getItem("sesion") === "false" ? 
+      '<ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">'+
+      '<div class="aligin-items-center" style="margin-left: 36px;padding: 20px;">'+
+      
+        ' <a href="login.html" type="button" class=" mx-auto btn btn-primary">Login</a>'+
+      '</div>'+
+    '</ul>' : ''}
+      
 
       <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
     </div>

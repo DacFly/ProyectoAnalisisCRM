@@ -1,13 +1,14 @@
 var cardContainer = document.getElementById('card-container');
 
 function validateLogin() {
-  console.log(sessionStorage.getItem("sesion"))
+  console.log("hola 1")
   if (sessionStorage.getItem("sesion") == null || sessionStorage.getItem("sesion") == "false") {
-    window.location.href = "login.html";
-  } 1
+    console.log("hola 2")
+    sessionStorage.setItem("sesion","false");
+  } 
 }
 
-//validateLogin();
+validateLogin();  
 
 function cargarEventos() {
   fetch("https://localhost:7088/Evento/eventosNoInscritos/" + sessionStorage.getItem("id"), {

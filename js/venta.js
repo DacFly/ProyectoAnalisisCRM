@@ -23,7 +23,7 @@ function cargarVentas() {
             <td>${venta.subtotal}</td>
             <td>${venta.iva}</td>
             <td>${venta.montoTotal}</td>
-            <td>${venta.fechaVenta}</td>
+            <td>${venta.fechaVenta.split("T")[0]}</td>
             <td>
               <a name="" id="" class="btn btn-info" onclick="editar(${venta.codFactura},'${venta.nombreCliente}','${venta.cedulaCliente}','${venta.nombreProducto}',${venta.cantidadProducto},${venta.subtotal},${venta.iva},${venta.montoTotal},'${venta.fechaVenta}')" role="button">Editar</a>
               <a name="" id="" class="btn btn-danger" onclick="eliminar(${venta.codFactura})" role="button">Eliminar</a>
@@ -493,7 +493,7 @@ function editar(codFactura, nombreCliente, cedula, nombreProducto, cantidad, sub
   document.getElementById("editSubtotal").value = subtotal;
   document.getElementById("editIVA").value = iva;
   document.getElementById("editMontoTotal").value = montoTotal;
-  document.getElementById("editFechaVenta").value = fechaVenta;
+  document.getElementById("editFechaVenta").value = fechaVenta.split("T")[0];
 
   // Cargar clienteId y productoId
   cargarInfoClienteProducto(codFactura);

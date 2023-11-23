@@ -29,6 +29,24 @@ namespace Api.Controllers
             return Ok(usuarios);
         }
 
+        [HttpPut]
+        [Route("Login/{correo}/{contrasena}")]
+        public async Task<IActionResult> Login(string correo, string contrasena)
+        {
+            // Verificar si el usuario existe en la base de datos
+            var usuario = await _context.Usuario.FirstOrDefaultAsync(u => u.Nombre == correo && u.Contrasena == contrasena);
+
+            if (usuario == null)
+            {
+                return NotFound(); // Usuario no encontrado
+            }
+
+            // Realizar acciones adicionales según tus necesidades (por ejemplo, generar token de autenticación)
+
+            return Ok(usuario); // Devolver el usuario en caso de inicio de sesión exitoso
+        }
+
+
         // GET: api/Usuarios/5
         [HttpGet]
         [Route("BuscarUsuario/{id}")]

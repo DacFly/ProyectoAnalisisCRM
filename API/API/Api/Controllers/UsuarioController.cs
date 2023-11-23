@@ -30,11 +30,11 @@ namespace Api.Controllers
         }
 
         [HttpPut]
-        [Route("Login/{correo}/{contrasena}")]
-        public async Task<IActionResult> Login(string correo, string contrasena)
+        [Route("Login/{nombre}/{contrasena}")]
+        public async Task<IActionResult> Login(string nombre, string contrasena)
         {
             // Verificar si el usuario existe en la base de datos
-            var usuario = await _context.Usuario.FirstOrDefaultAsync(u => u.Nombre == correo && u.Contrasena == contrasena);
+            var usuario = await _context.Usuario.FirstOrDefaultAsync(u => u.Nombre == nombre && u.Contrasena == contrasena);
 
             if (usuario == null)
             {

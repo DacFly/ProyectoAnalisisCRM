@@ -37,10 +37,11 @@ contenido.innerHTML += `
         <div class="container-fluid">
   <!-- ... tu código existente ... -->
 
-  <!-- Nuevo botón al final de todos los componentes -->
-  <div class="col-12 text-center">
+
+  <div class="row align-items-center">
+    <div class="site-logo col-6">
     <button type="button" class="btn btn-primary">Mi Botón</button>
-  </div>
+    </div>
 </div>
       </div>
       <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>

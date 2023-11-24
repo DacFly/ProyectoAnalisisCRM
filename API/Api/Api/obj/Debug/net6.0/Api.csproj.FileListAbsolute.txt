@@ -678,3 +678,4 @@ C:\Users\racha\OneDrive\Documentos\GitHub\ProyectoAnalisisCRM\API\API\Api\bin\De
 C:\Users\racha\OneDrive\Documentos\GitHub\ProyectoAnalisisCRM\API\API\Api\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\racha\OneDrive\Documentos\GitHub\ProyectoAnalisisCRM\API\API\Api\obj\Debug\net6.0\Api.RazorAssemblyInfo.cache
 C:\Users\racha\OneDrive\Documentos\GitHub\ProyectoAnalisisCRM\API\API\Api\obj\Debug\net6.0\Api.RazorAssemblyInfo.cs
+C:\Users\racha\OneDrive\Documentos\GitHub\ProyectoAnalisisCRM\API\API\Api\obj\Debug\net6.0\Api.sourcelink.json
